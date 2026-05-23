@@ -16,47 +16,101 @@
 <meta name="twitter:image" content="https://zenova1004zen.netlify.app/og-image.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --black:#000000;--white:#FFFFFF;--cyan:#00CFFF;--gray:#888888;--dark-gray:#333333;
-  --font-display:'Cinzel Decorative',serif;
+  /* === パステルブルー基調パレット === */
+  --bg-base:#F4F8FE;
+  --bg-white:#FFFFFF;
+  --bg-soft:#EBF3FD;
+  --bg-mist:#F8FBFF;
+  --blue-pale:#E0EEFB;
+  --blue-light:#B3DDF7;
+  --blue-accent:#7BC2F0;
+  --blue-primary:#3A8DDB;
+  --blue-deep:#1E5FA8;
+  --blue-ink:#0A3D7A;
+  --blue-mint:#7DDFE7;
+  --blue-sky:#5BB4F7;
+  --text-dark:#0F1F3D;
+  --text-mid:#3D4B6B;
+  --text-sub:#6F7E9C;
+  --text-mute:#A8B4CC;
+  --border:#DCE7F5;
+  --border-soft:#EBF1F9;
+  --shadow-blue:0 16px 48px rgba(58,141,219,.14);
+  --shadow-blue-lg:0 30px 80px rgba(30,95,168,.18);
+  --shadow-soft:0 8px 30px rgba(15,31,61,.06);
+  --shadow-card:0 4px 24px rgba(58,141,219,.08);
+  --grad-blue:linear-gradient(135deg,#7BC2F0 0%,#3A8DDB 100%);
+  --grad-blue-deep:linear-gradient(135deg,#5BB4F7 0%,#1E5FA8 100%);
+  --grad-sky:linear-gradient(135deg,#B3DDF7 0%,#7BC2F0 100%);
+  --grad-mint:linear-gradient(135deg,#7DDFE7 0%,#5BB4F7 100%);
+  --grad-aurora:linear-gradient(135deg,#7DDFE7 0%,#5BB4F7 50%,#3A8DDB 100%);
+  --font-display:'Bodoni Moda',serif;
   --font-jp:'Noto Sans JP',sans-serif;
   --font-en:'Inter',sans-serif;
+  --font-mono:'Space Grotesk',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--font-jp);line-height:1.8;overflow-x:hidden}
-a{color:var(--white);text-decoration:none;transition:color .3s}
-a:hover{color:var(--cyan)}
+body{background:var(--bg-base);color:var(--text-dark);font-family:var(--font-jp);font-weight:400;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--text-dark);text-decoration:none;transition:color .3s}
+a:hover{color:var(--blue-primary)}
 img{max-width:100%;display:block}
-.container{max-width:1200px;margin:0 auto;padding:0 40px}
-.c{color:var(--cyan)}
-@media(max-width:768px){.container{padding:0 20px}}
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.highlight{background:linear-gradient(transparent 62%,var(--blue-light) 62%);padding:0 4px;font-weight:700}
+.bold-blue{color:var(--blue-deep);font-weight:700}
+@media(max-width:768px){.container{padding:0 24px}}
+
+/* ========== 特徴的なZENOVAロゴ ========== */
+/* "Z·E·N·O·V·A" の中で N だけブランドアイコン化 */
+.zenova-logo{display:inline-flex;align-items:baseline;font-family:var(--font-display);font-weight:900;letter-spacing:.02em;line-height:.85;position:relative}
+.zenova-logo .ltr{position:relative;display:inline-block}
+.zenova-logo .ltr.ltr-z{font-style:italic;color:var(--text-dark);transform:translateY(0);font-weight:900}
+.zenova-logo .ltr.ltr-e{color:var(--text-dark);font-weight:400}
+.zenova-logo .ltr.ltr-n{position:relative;background:var(--grad-aurora);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:900;font-style:italic;padding:0 .04em}
+.zenova-logo .ltr.ltr-o{color:var(--text-dark);font-weight:400}
+.zenova-logo .ltr.ltr-v{font-style:italic;color:var(--text-dark);font-weight:900}
+.zenova-logo .ltr.ltr-a{color:var(--text-dark);font-weight:400}
+.zenova-logo .dot-deco{display:inline-block;width:.12em;height:.12em;border-radius:50%;background:var(--blue-primary);align-self:flex-end;margin-bottom:.18em;margin-left:.04em}
+
+/* ヘッダー小型ロゴ */
+.logo-small{font-size:24px}
+.logo-small .dot-deco{display:none}
+
+/* HERO巨大ロゴ */
+.logo-hero{font-size:clamp(72px,15vw,220px)}
+
+/* フッターロゴ */
+.logo-footer{font-size:clamp(56px,11vw,140px)}
 
 /* ========== HEADER ========== */
-.header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s}
-.header.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(10px);padding:14px 40px}
-.header-logo{font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:2px;color:var(--white)}
-.header-logo:hover{color:var(--white)}
-.header-logo:hover .c{color:var(--cyan)}
-.header-nav{display:flex;gap:28px;list-style:none}
-.header-nav a{font-family:var(--font-en);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gray);transition:color .3s}
-.header-nav a:hover,.header-nav a.active{color:var(--white)}
-.header-sns{display:flex;gap:16px;align-items:center}
-.header-sns a{display:flex;align-items:center}
-.header-sns svg{width:18px;height:18px;fill:var(--white);transition:fill .3s}
-.header-sns a:hover svg{fill:var(--cyan)}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1001}
-.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform .3s,opacity .3s}
+.header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,box-shadow .4s,border-color .4s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(244,248,254,.85);backdrop-filter:blur(18px) saturate(160%);padding:14px 48px;border-bottom-color:var(--border-soft)}
+.header-logo{display:flex;align-items:center}
+.header-nav{display:flex;gap:34px;list-style:none}
+.header-nav a{font-family:var(--font-en);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-sub);transition:color .3s;position:relative;padding:6px 0}
+.header-nav a::after{content:'';position:absolute;left:50%;bottom:0;width:0;height:2px;background:var(--blue-primary);transition:all .3s;transform:translateX(-50%);border-radius:2px}
+.header-nav a:hover{color:var(--blue-deep)}
+.header-nav a:hover::after{width:100%}
+.header-sns{display:flex;gap:10px;align-items:center}
+.header-sns a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--bg-white);border:1px solid var(--border);transition:all .3s}
+.header-sns a:hover{background:var(--grad-blue);border-color:transparent;transform:translateY(-2px)}
+.header-sns svg{width:15px;height:15px;fill:var(--text-mid);transition:fill .3s}
+.header-sns a:hover svg{fill:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-dark);transition:transform .3s,opacity .3s;border-radius:2px}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 @media(max-width:900px){
-  .header-nav-wrap{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+  .header{padding:18px 24px}
+  .header.scrolled{padding:14px 24px}
+  .header-nav-wrap{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(244,248,254,.97);backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
   .header-nav-wrap.open{opacity:1;pointer-events:all}
-  .header-nav{flex-direction:column;align-items:center;gap:32px}
-  .header-nav a{font-size:18px;color:var(--white)}
+  .header-nav{flex-direction:column;align-items:center;gap:36px}
+  .header-nav a{font-size:18px;color:var(--text-dark)}
   .header-sns-desktop{display:none}
   .hamburger{display:flex}
 }
@@ -66,186 +120,262 @@ img{max-width:100%;display:block}
 }
 
 /* ========== HERO ========== */
-.hero{position:relative;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
-.hero-watermark{position:absolute;font-family:var(--font-display);font-size:60vw;font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none}
-.hero-title{font-family:var(--font-display);font-size:clamp(60px,12vw,160px);font-weight:900;letter-spacing:8px;z-index:1;text-align:center}
-.hero-line{display:block;width:60px;height:2px;background:var(--cyan);margin:28px auto 0;z-index:1}
-.hero-sub{font-family:var(--font-en);font-size:clamp(12px,1.4vw,16px);letter-spacing:6px;color:var(--gray);margin-top:16px;z-index:1;text-transform:uppercase}
-.scroll-indicator{position:absolute;bottom:40px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:1}
-.scroll-indicator span{font-family:var(--font-en);font-size:10px;letter-spacing:3px;color:var(--gray);text-transform:uppercase}
-.scroll-indicator .arrow{width:1px;height:40px;background:var(--gray);position:relative;overflow:hidden}
-.scroll-indicator .arrow::after{content:'';position:absolute;top:-40px;left:0;width:1px;height:40px;background:var(--white);animation:scrollDown 2s infinite}
-@keyframes scrollDown{0%{top:-40px}100%{top:40px}}
-.hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0}
-.hero-particles span{position:absolute;width:2px;height:2px;background:var(--cyan);border-radius:50%;opacity:.3;animation:float linear infinite}
-@keyframes float{0%{transform:translateY(0) scale(1);opacity:.3}50%{opacity:.6}100%{transform:translateY(-100vh) scale(0);opacity:0}}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--blue-pale) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 20% 90%,#D4E8FB 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,#E5F1FC 0%,transparent 60%),var(--bg-mist)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(58,141,219,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(58,141,219,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,#000 0%,transparent 70%);pointer-events:none}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.55;pointer-events:none}
+.hero-blob.b1{width:520px;height:520px;background:var(--blue-light);top:-120px;left:-100px;animation:blobFloat 14s ease-in-out infinite}
+.hero-blob.b2{width:420px;height:420px;background:#A8DEF0;bottom:-80px;right:-80px;animation:blobFloat 16s ease-in-out infinite reverse}
+.hero-blob.b3{width:360px;height:360px;background:#C5E7FA;top:30%;right:25%;animation:blobFloat 12s ease-in-out infinite;opacity:.4}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.08)}66%{transform:translate(-30px,40px) scale(.94)}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:1200px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);color:var(--blue-deep);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:3px;padding:10px 20px;border-radius:99px;margin-bottom:40px;text-transform:uppercase;box-shadow:var(--shadow-soft);border:1px solid var(--border-soft)}
+.hero-badge::before{content:'';width:6px;height:6px;background:#3A8DDB;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(58,141,219,.5)}50%{opacity:.7;box-shadow:0 0 0 8px rgba(58,141,219,0)}}
+.hero-title-wrap{position:relative;display:inline-block;margin-bottom:8px}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:36px auto 0;max-width:340px}
+.hero-divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent 0%,var(--blue-accent) 50%,transparent 100%)}
+.hero-divider-dot{width:6px;height:6px;border-radius:50%;background:var(--blue-primary);box-shadow:0 0 0 4px rgba(58,141,219,.15)}
+.hero-sub{font-family:var(--font-en);font-size:clamp(12px,1.3vw,15px);letter-spacing:8px;color:var(--text-sub);margin-top:20px;text-transform:uppercase;font-weight:500}
+.hero-tagline{margin-top:36px;font-size:clamp(15px,1.7vw,19px);color:var(--text-mid);font-weight:500;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto}
+.hero-tagline strong{background:var(--grad-blue-deep);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:900}
+.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:60px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--font-en);font-size:clamp(28px,3.5vw,42px);font-weight:900;background:var(--grad-blue-deep);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hero-stat-label{font-family:var(--font-en);font-size:10px;letter-spacing:2px;color:var(--text-sub);text-transform:uppercase;margin-top:8px;font-weight:600}
+.scroll-indicator{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:1}
+.scroll-indicator span{font-family:var(--font-en);font-size:10px;letter-spacing:3px;color:var(--text-sub);text-transform:uppercase;font-weight:600}
+.scroll-indicator .arrow{width:2px;height:50px;background:var(--border);position:relative;overflow:hidden;border-radius:2px}
+.scroll-indicator .arrow::after{content:'';position:absolute;top:-50px;left:0;width:2px;height:50px;background:var(--grad-blue);animation:scrollDown 2.5s infinite;border-radius:2px}
+@keyframes scrollDown{0%{top:-50px}100%{top:50px}}
 
 /* ========== SECTION COMMON ========== */
-.section{padding:140px 0;position:relative}
-@media(max-width:768px){.section{padding:80px 0}}
-.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
-.section-title{font-family:var(--font-display);font-size:clamp(48px,8vw,110px);font-weight:900;line-height:1;letter-spacing:3px}
-.view-all{font-family:var(--font-en);font-size:12px;letter-spacing:2px;color:var(--gray);text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--gray);padding-bottom:2px;transition:color .3s,border-color .3s}
-.view-all:hover{color:var(--cyan);border-color:var(--cyan)}
+.section{padding:160px 0;position:relative}
+@media(max-width:768px){.section{padding:96px 0}}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:72px;flex-wrap:wrap;gap:20px}
+.section-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:3px;color:var(--blue-primary);text-transform:uppercase;font-weight:600;margin-bottom:18px}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--blue-primary)}
+.section-title{font-family:var(--font-display);font-size:clamp(56px,8.5vw,118px);font-weight:900;line-height:.95;letter-spacing:-.02em;color:var(--text-dark);font-style:italic}
+.section-title .em{font-style:italic;font-weight:400;background:var(--grad-blue-deep);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.view-all{font-family:var(--font-en);font-size:12px;letter-spacing:2.5px;color:var(--text-sub);text-transform:uppercase;white-space:nowrap;padding-bottom:6px;transition:color .3s;font-weight:600;display:inline-flex;align-items:center;gap:8px;border-bottom:2px solid var(--blue-light)}
+.view-all:hover{color:var(--blue-deep);border-bottom-color:var(--blue-deep)}
 
 /* ========== FADE IN ========== */
-.fade-in{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.fade-in{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 
 /* ========== NEWS ========== */
-.news-list{border-top:1px solid var(--dark-gray)}
-.news-item{display:grid;grid-template-columns:120px 1fr auto;gap:20px;padding:20px 0;border-bottom:1px solid var(--dark-gray);align-items:center;transition:background .3s;cursor:pointer}
-.news-item:hover{background:rgba(255,255,255,.03)}
-.news-date{font-family:var(--font-en);font-size:13px;color:var(--gray);letter-spacing:1px}
-.news-title-text{font-size:14px;font-weight:400}
-.news-cat{font-family:var(--font-en);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-align:right}
+#news{background:var(--bg-base)}
+.news-list{background:#fff;border-radius:24px;padding:8px 36px;box-shadow:var(--shadow-card);border:1px solid var(--border-soft)}
+.news-item{display:grid;grid-template-columns:130px 1fr auto;gap:24px;padding:24px 0;border-bottom:1px solid var(--border-soft);align-items:center;transition:padding .3s;cursor:pointer}
+.news-item:last-child{border-bottom:none}
+.news-item:hover{padding-left:12px}
+.news-item:hover .news-title-text{color:var(--blue-deep)}
+.news-date{font-family:var(--font-mono);font-size:13px;color:var(--text-sub);letter-spacing:1px;font-weight:500}
+.news-title-text{font-size:14.5px;font-weight:500;color:var(--text-dark);transition:color .3s}
+.news-cat{font-family:var(--font-en);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:5px 14px;border-radius:99px;font-weight:700;min-width:80px;border:1px solid}
+.news-cat.site{background:var(--blue-pale);color:var(--blue-deep);border-color:transparent}
+.news-cat.sns{background:#EAF8FB;color:#2A8FA4;border-color:transparent}
+.news-cat.info{background:#F0E9FB;color:#5E4099;border-color:transparent}
 @media(max-width:600px){
-  .news-item{grid-template-columns:1fr;gap:6px}
-  .news-cat{text-align:left}
+  .news-item{grid-template-columns:1fr;gap:8px}
+  .news-cat{justify-self:start}
 }
 
 /* ========== PROFILE ========== */
-.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:60px}
-.profile-text{font-size:15px;line-height:2;color:rgba(255,255,255,.85)}
-@media(max-width:768px){.profile-grid{grid-template-columns:1fr;gap:30px}}
+#profile{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-soft) 100%)}
+#profile::before{content:'';position:absolute;top:15%;right:-150px;width:400px;height:400px;background:var(--blue-pale);border-radius:50%;filter:blur(100px);opacity:.7;pointer-events:none}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:60px;position:relative;z-index:1}
+.profile-card{background:#fff;padding:48px;border-radius:28px;box-shadow:var(--shadow-card);border:1px solid var(--border-soft);transition:all .5s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.profile-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--grad-blue);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.profile-card:hover::before{transform:scaleX(1)}
+.profile-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-blue)}
+.profile-card-num{position:absolute;top:32px;right:36px;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--blue-accent);letter-spacing:2px}
+.profile-card-icon{display:inline-flex;width:60px;height:60px;align-items:center;justify-content:center;border-radius:18px;margin-bottom:28px;background:var(--blue-pale);color:var(--blue-deep)}
+.profile-card-icon svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.profile-card h3{font-family:var(--font-en);font-size:13px;font-weight:700;letter-spacing:2.5px;color:var(--blue-primary);margin-bottom:16px;text-transform:uppercase}
+.profile-text{font-size:15px;line-height:2;color:var(--text-mid)}
+@media(max-width:768px){.profile-grid{grid-template-columns:1fr;gap:20px}.profile-card{padding:32px 28px}}
 
 /* Profile visual */
-.profile-visual{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;border:1px solid var(--dark-gray);background:#050508}
-.profile-visual:hover .pv-overlay{opacity:1}
-.pv-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:1px}
-.pv-cell{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:all .5s}
-.pv-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,207,255,.04) 0%,transparent 100%);transition:background .5s}
-.profile-visual:hover .pv-cell::before{background:linear-gradient(135deg,rgba(0,207,255,.1) 0%,transparent 100%)}
-.pv-cell-label{font-family:var(--font-en);font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.2);text-transform:uppercase;transition:color .5s}
-.profile-visual:hover .pv-cell-label{color:rgba(255,255,255,.4)}
-.pv-cell:nth-child(1){grid-column:1/3;grid-row:1/3}
-.pv-cell:nth-child(1) .pv-cell-label{font-size:28px;letter-spacing:6px;color:rgba(255,255,255,.06);font-family:var(--font-display);font-weight:900}
-.profile-visual:hover .pv-cell:nth-child(1) .pv-cell-label{color:rgba(0,207,255,.15)}
-.pv-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,207,255,.06) 0%,transparent 50%);opacity:0;transition:opacity .5s;pointer-events:none}
-.pv-corner{position:absolute;width:40px;height:40px;border:1px solid rgba(0,207,255,.2)}
-.pv-corner--tl{top:12px;left:12px;border-right:none;border-bottom:none}
-.pv-corner--br{bottom:12px;right:12px;border-left:none;border-top:none}
+.profile-visual{width:100%;aspect-ratio:16/8;position:relative;overflow:hidden;border-radius:28px;box-shadow:var(--shadow-card);background:linear-gradient(135deg,var(--blue-pale) 0%,#F0F7FE 100%);border:1px solid var(--border-soft)}
+.pv-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:1px;padding:1px}
+.pv-cell{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:all .6s cubic-bezier(.16,1,.3,1);background:rgba(255,255,255,.75);backdrop-filter:blur(4px)}
+.profile-visual:hover .pv-cell{background:rgba(255,255,255,.9)}
+.pv-cell-label{font-family:var(--font-en);font-size:11px;letter-spacing:3px;color:var(--text-sub);text-transform:uppercase;font-weight:700;transition:color .5s;text-align:center}
+.profile-visual:hover .pv-cell-label{color:var(--blue-deep)}
+.pv-cell:nth-child(1){grid-column:1/3;grid-row:1/3;background:var(--grad-blue-deep)}
+.pv-cell:nth-child(1) .pv-cell-label{font-size:30px;letter-spacing:4px;color:#fff;font-family:var(--font-display);font-weight:900;font-style:italic;text-shadow:0 4px 24px rgba(0,0,0,.18)}
+.profile-visual:hover .pv-cell:nth-child(1){background:var(--grad-blue-deep)}
+.profile-visual:hover .pv-cell:nth-child(1) .pv-cell-label{color:#fff}
 
 /* ========== SERVICE ========== */
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+#service{background:var(--bg-base);position:relative;overflow:hidden}
+#service::before{content:'';position:absolute;top:10%;left:-100px;width:350px;height:350px;background:var(--blue-light);border-radius:50%;filter:blur(120px);opacity:.4;pointer-events:none}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:1100px){.service-grid{grid-template-columns:repeat(2,1fr)}}
-.service-card{border:1px solid var(--dark-gray);padding:40px 30px;transition:border-color .4s,transform .4s;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.service-card:hover::before{transform:scaleX(1)}
-.service-card:hover{border-color:var(--cyan);transform:translateY(-4px)}
-.service-icon{width:48px;height:48px;margin-bottom:24px;fill:none;stroke:var(--cyan);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.service-card-title{font-family:var(--font-en);font-size:22px;font-weight:700;letter-spacing:2px;margin-bottom:4px}
-.service-card-sub{font-size:13px;color:var(--gray);margin-bottom:20px}
-.service-card-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,.8);flex:1;margin-bottom:24px}
-.service-card-price{font-family:var(--font-en);font-size:24px;font-weight:700;color:var(--cyan);margin-bottom:24px}
-.service-card-btn{display:inline-block;font-family:var(--font-en);font-size:12px;letter-spacing:2px;color:var(--white);border:1px solid var(--white);padding:10px 24px;transition:all .3s;text-align:center}
-.service-card-btn:hover{background:var(--cyan);color:var(--black);border-color:var(--cyan)}
+.service-card{background:#fff;border-radius:24px;padding:40px 32px;transition:all .5s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--border-soft)}
+.service-card::after{content:'';position:absolute;inset:0;background:var(--grad-blue);opacity:0;transition:opacity .5s;pointer-events:none;z-index:0}
+.service-card>*{position:relative;z-index:1}
+.service-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-blue-lg);border-color:var(--blue-accent)}
+.service-num{position:absolute;top:32px;right:32px;font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--text-mute);letter-spacing:2px;z-index:2}
+.service-icon-wrap{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;background:var(--blue-pale);transition:all .5s}
+.service-card:hover .service-icon-wrap{background:var(--grad-blue);transform:scale(1.08) rotate(-6deg)}
+.service-icon{width:34px;height:34px;fill:none;stroke:var(--blue-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .5s}
+.service-card:hover .service-icon{stroke:#fff}
+.service-card-title{font-family:var(--font-en);font-size:20px;font-weight:800;letter-spacing:.5px;margin-bottom:6px;color:var(--text-dark)}
+.service-card-sub{font-size:13px;color:var(--text-sub);margin-bottom:20px;font-weight:500}
+.service-card-desc{font-size:14px;line-height:1.9;color:var(--text-mid);flex:1;margin-bottom:24px}
+.service-card-desc strong{color:var(--blue-deep);font-weight:700}
+.service-card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.service-card-price{font-family:var(--font-en);font-size:24px;font-weight:800;color:var(--blue-deep);letter-spacing:-.02em}
+.service-card-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-dark);background:transparent;border:none;padding:8px 0;transition:all .3s;text-transform:uppercase;border-bottom:1.5px solid var(--text-dark)}
+.service-card-btn:hover{color:var(--blue-deep);border-bottom-color:var(--blue-deep);gap:10px}
 @media(max-width:768px){.service-grid{grid-template-columns:1fr}}
 
 /* ========== WORKS CAROUSEL ========== */
-.carousel-wrap{position:relative;overflow:hidden}
-.carousel-track{display:flex;transition:transform .5s ease}
+#works{background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-mist) 50%,var(--bg-base) 100%);position:relative;overflow:hidden}
+#works::before{content:'';position:absolute;top:8%;right:5%;width:400px;height:400px;background:var(--blue-pale);border-radius:50%;filter:blur(120px);opacity:.6;pointer-events:none}
+#works::after{content:'';position:absolute;bottom:10%;left:5%;width:400px;height:400px;background:#D7EBFB;border-radius:50%;filter:blur(120px);opacity:.5;pointer-events:none}
+.carousel-wrap{position:relative;overflow:hidden;z-index:1}
+.carousel-track{display:flex;transition:transform .7s cubic-bezier(.16,1,.3,1)}
 .carousel-slide{min-width:100%;padding:0 10px}
-@media(min-width:769px){.carousel-slide{min-width:50%;padding:0 15px}}
-@media(min-width:1100px){.carousel-slide{min-width:33.333%;padding:0 15px}}
-.work-card{border:1px solid var(--dark-gray);padding:0;height:100%;display:flex;flex-direction:column;overflow:hidden;transition:border-color .4s}
-.work-card:hover{border-color:rgba(0,207,255,.4)}
-.work-card-visual{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden}
+@media(min-width:769px){.carousel-slide{min-width:50%;padding:0 14px}}
+@media(min-width:1100px){.carousel-slide{min-width:33.333%;padding:0 14px}}
+.work-card{background:#fff;border-radius:24px;padding:0;height:100%;display:flex;flex-direction:column;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--border-soft)}
+.work-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-blue-lg);border-color:var(--blue-accent)}
+.work-card-visual{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;border-radius:24px 24px 0 0}
 .work-card-visual svg{position:absolute;inset:0;width:100%;height:100%}
-.work-card-body{padding:28px 24px;flex:1;display:flex;flex-direction:column}
-.work-card-title{font-family:var(--font-en);font-size:16px;font-weight:700;margin-bottom:16px;letter-spacing:1px}
-.work-card-row{display:flex;gap:8px;margin-bottom:6px;font-size:12.5px;line-height:1.7}
-.work-label{font-family:var(--font-en);font-weight:600;color:var(--cyan);white-space:nowrap;min-width:46px}
-.work-card-result{margin-top:auto;padding-top:16px;font-size:14px;font-weight:700;color:var(--cyan);border-top:1px solid var(--dark-gray)}
-.work-card-note{margin-top:8px;font-size:11px;font-weight:400;color:rgba(255,255,255,.35);letter-spacing:.02em}
-.carousel-nav{display:flex;gap:16px;margin-top:40px;justify-content:center}
-.carousel-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--white);background:transparent;color:var(--white);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.carousel-btn:hover{background:var(--white);color:var(--black)}
-.carousel-btn svg{width:16px;height:16px;fill:currentColor}
+.work-card-badge{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:1.5px;padding:6px 12px;border-radius:99px;color:var(--blue-deep);z-index:2}
+.work-card-body{padding:30px 26px;flex:1;display:flex;flex-direction:column}
+.work-card-title{font-family:var(--font-jp);font-size:18px;font-weight:700;margin-bottom:20px;letter-spacing:.5px;color:var(--text-dark);line-height:1.5}
+.work-card-row{display:flex;gap:10px;margin-bottom:8px;font-size:13px;line-height:1.7}
+.work-label{font-family:var(--font-en);font-weight:800;color:#fff;background:var(--blue-accent);white-space:nowrap;min-width:54px;text-align:center;padding:3px 8px;border-radius:6px;font-size:10px;letter-spacing:1px;align-self:flex-start;margin-top:3px}
+.work-label.after-label{background:var(--grad-blue-deep)}
+.work-card-row-text{color:var(--text-mid);flex:1}
+.work-card-result{margin-top:auto;padding-top:20px;font-size:15.5px;font-weight:800;border-top:1px solid var(--border);background:var(--grad-blue-deep);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.work-card-note{margin-top:8px;font-size:11px;font-weight:400;color:var(--text-mute);letter-spacing:.02em}
+.carousel-nav{display:flex;gap:16px;margin-top:56px;justify-content:center;align-items:center}
+.carousel-dots{display:flex;gap:8px;margin:0 16px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .3s;border:none;padding:0}
+.carousel-dot.active{background:var(--blue-primary);width:24px;border-radius:8px}
+.carousel-btn{width:52px;height:52px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--text-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;box-shadow:var(--shadow-soft)}
+.carousel-btn:hover{background:var(--grad-blue);color:#fff;transform:scale(1.08);border-color:transparent;box-shadow:var(--shadow-blue)}
+.carousel-btn svg{width:18px;height:18px;fill:currentColor}
 
 /* ========== PRICE ========== */
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.price-card{border:1px solid var(--dark-gray);padding:36px 24px;text-align:center;position:relative;transition:border-color .4s,transform .4s}
-.price-card:hover{border-color:var(--cyan);transform:translateY(-4px)}
-.price-card.popular{border-color:var(--cyan)}
-.price-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--cyan);color:var(--black);font-family:var(--font-en);font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 16px;text-transform:uppercase}
-.price-icon{margin:0 auto 16px;width:40px;height:40px;stroke:var(--cyan);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.price-plan-en{font-family:var(--font-en);font-size:14px;font-weight:600;letter-spacing:3px;margin-bottom:4px;margin-top:8px;text-transform:uppercase}
-.price-plan-jp{font-size:13px;color:var(--gray);margin-bottom:24px}
-.price-amount{font-family:var(--font-en);font-size:32px;font-weight:700;color:var(--cyan);margin-bottom:24px}
-.price-desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,.75);text-align:left}
-@media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+#price{background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-soft) 50%,var(--bg-base) 100%);position:relative;overflow:hidden}
+#price::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,var(--blue-pale) 0%,transparent 70%);pointer-events:none;border-radius:50%}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1}
+.price-card{background:#fff;border-radius:24px;padding:44px 28px 36px;text-align:center;position:relative;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--border-soft);overflow:hidden}
+.price-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-blue);border-color:var(--blue-accent)}
+.price-card.popular{background:var(--grad-blue-deep);color:#fff;transform:scale(1.05);box-shadow:var(--shadow-blue-lg);border-color:transparent}
+.price-card.popular::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2) 0%,transparent 60%);pointer-events:none}
+.price-card.popular:hover{transform:scale(1.05) translateY(-8px)}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue-deep);font-family:var(--font-mono);font-size:11px;font-weight:800;letter-spacing:2px;padding:6px 18px;border-radius:99px;text-transform:uppercase;box-shadow:var(--shadow-blue);z-index:2}
+.price-icon-wrap{width:64px;height:64px;border-radius:20px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;transition:transform .5s;position:relative;z-index:1}
+.price-card:hover .price-icon-wrap{transform:rotate(8deg) scale(1.08)}
+.price-card.popular .price-icon-wrap{background:rgba(255,255,255,.18)}
+.price-icon{width:32px;height:32px;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:var(--blue-deep);position:relative;z-index:1}
+.price-card.popular .price-icon{stroke:#fff}
+.price-plan-en{font-family:var(--font-en);font-size:14px;font-weight:800;letter-spacing:3px;margin-bottom:6px;text-transform:uppercase;color:var(--text-dark);position:relative;z-index:1}
+.price-card.popular .price-plan-en{color:#fff}
+.price-plan-jp{font-size:13px;color:var(--text-sub);margin-bottom:24px;font-weight:500;position:relative;z-index:1}
+.price-card.popular .price-plan-jp{color:rgba(255,255,255,.85)}
+.price-amount{font-family:var(--font-en);font-size:36px;font-weight:900;margin-bottom:28px;color:var(--blue-deep);letter-spacing:-.02em;position:relative;z-index:1;line-height:1}
+.price-card.popular .price-amount{color:#fff}
+.price-desc{font-size:13.5px;line-height:1.9;color:var(--text-mid);font-weight:500;position:relative;z-index:1}
+.price-card.popular .price-desc{color:rgba(255,255,255,.92)}
+@media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}.price-card.popular{transform:none}.price-card.popular:hover{transform:translateY(-8px)}}
 @media(max-width:520px){.price-grid{grid-template-columns:1fr}}
 
 /* ========== CTA ========== */
-.cta-section{padding:100px 0;background:linear-gradient(135deg,rgba(0,207,255,.12) 0%,rgba(0,0,0,.95) 60%,#0D0D1A 100%);text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,207,255,.06) 0%,transparent 50%);pointer-events:none}
-.cta-title{font-size:clamp(22px,3.5vw,36px);font-weight:700;margin-bottom:20px;line-height:1.6}
-.cta-sub{font-size:15px;color:rgba(255,255,255,.75);margin-bottom:40px;line-height:1.8}
-.cta-btn{display:inline-block;background:var(--cyan);color:var(--black);font-weight:700;font-size:15px;padding:18px 52px;letter-spacing:1px;transition:all .3s;position:relative}
-.cta-btn:hover{background:var(--white);color:var(--black);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,207,255,.2)}
+.cta-section{padding:120px 0;background:var(--grad-blue-deep);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-30%;width:80%;height:200%;background:radial-gradient(ellipse,rgba(255,255,255,.18) 0%,transparent 50%);pointer-events:none}
+.cta-section::after{content:'';position:absolute;bottom:-50%;right:-30%;width:80%;height:200%;background:radial-gradient(ellipse,rgba(125,223,231,.2) 0%,transparent 50%);pointer-events:none}
+.cta-inner{position:relative;z-index:1}
+.cta-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);color:#fff;font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:3px;padding:10px 20px;border-radius:99px;margin-bottom:24px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2)}
+.cta-badge::before{content:'';width:6px;height:6px;background:#fff;border-radius:50%;animation:pulse-white 2s ease-in-out infinite}
+@keyframes pulse-white{0%,100%{opacity:1}50%{opacity:.4}}
+.cta-title{font-family:var(--font-display);font-size:clamp(28px,4.5vw,52px);font-weight:900;margin-bottom:24px;line-height:1.3;color:#fff;font-style:italic;letter-spacing:-.01em}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.92);margin-bottom:48px;line-height:1.8;font-weight:400;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue-deep);font-weight:800;font-size:15px;padding:20px 48px;letter-spacing:1px;transition:all .4s cubic-bezier(.16,1,.3,1);border-radius:99px;box-shadow:0 16px 50px rgba(0,0,0,.18)}
+.cta-btn:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.25);color:var(--blue-ink);gap:18px}
+.cta-btn-arrow{display:inline-block;transition:transform .3s}
+.cta-btn:hover .cta-btn-arrow{transform:translateX(4px)}
 
 /* ========== FAQ ========== */
-.faq-list{max-width:800px}
-.faq-item{border-bottom:1px solid var(--dark-gray)}
-.faq-question{width:100%;background:none;border:none;color:var(--white);font-family:var(--font-jp);font-size:15px;padding:24px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px;line-height:1.7}
-.faq-question:hover{color:var(--cyan)}
-.faq-icon{font-family:var(--font-en);font-size:20px;flex-shrink:0;transition:transform .3s;width:24px;text-align:center}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
-.faq-answer-inner{padding:0 0 24px;font-size:14px;line-height:2;color:rgba(255,255,255,.7)}
+.faq-list{max-width:860px;margin:0 auto}
+.faq-item{background:#fff;border-radius:18px;margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--border-soft);transition:all .3s}
+.faq-item:hover{border-color:var(--blue-light)}
+.faq-item.open{border-color:var(--blue-accent);box-shadow:var(--shadow-blue)}
+.faq-question{width:100%;background:none;border:none;color:var(--text-dark);font-family:var(--font-jp);font-size:15.5px;font-weight:600;padding:26px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px;line-height:1.7;transition:color .3s}
+.faq-question:hover{color:var(--blue-deep)}
+.faq-icon{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;color:var(--blue-deep);font-size:18px;font-weight:600;transition:all .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--grad-blue);color:#fff}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1)}
+.faq-answer-inner{padding:0 32px 28px;font-size:14.5px;line-height:2;color:var(--text-mid)}
 
 /* ========== CONTACT ========== */
+#contact{background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-soft) 100%);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:25%;left:-150px;width:380px;height:380px;background:var(--blue-pale);border-radius:50%;filter:blur(100px);opacity:.6;pointer-events:none}
+.contact-card{background:#fff;border-radius:32px;padding:72px 56px;box-shadow:var(--shadow-card);max-width:820px;margin:0 auto;border:1px solid var(--border-soft);position:relative;z-index:1;text-align:center;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-aurora)}
 .contact-info{margin-bottom:40px}
-.contact-info p{font-size:15px;line-height:1.9;color:rgba(255,255,255,.8);margin-bottom:12px}
-.contact-info a{color:var(--cyan)}
-.contact-iframe{width:100%;min-height:800px;border:none;background:transparent}
-.contact-fallback{margin-top:16px;font-size:13px;color:var(--gray)}
-.contact-fallback a{color:var(--cyan)}
+.contact-info p{font-size:15.5px;line-height:1.9;color:var(--text-mid);margin-bottom:14px}
+.contact-mail{display:inline-flex;align-items:center;gap:10px;color:var(--blue-deep);font-weight:700;font-size:15px;margin-top:12px;padding:14px 28px;background:var(--blue-pale);border-radius:99px;font-family:var(--font-mono);letter-spacing:.5px;transition:all .3s}
+.contact-mail:hover{background:var(--grad-blue);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+.contact-cta{padding:24px 0 0}
+.contact-cta .cta-btn{background:var(--grad-blue-deep);color:#fff;box-shadow:var(--shadow-blue)}
+.contact-cta .cta-btn:hover{box-shadow:var(--shadow-blue-lg);color:#fff}
+@media(max-width:768px){.contact-card{padding:48px 28px}}
 
 /* ========== FOOTER ========== */
-.footer{padding:80px 0 40px;border-top:1px solid var(--dark-gray);position:relative}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:80px;flex-wrap:wrap;gap:20px}
-.footer-location{font-family:var(--font-en);font-size:12px;letter-spacing:2px;color:var(--gray)}
-.footer-time{font-family:var(--font-en);font-size:12px;letter-spacing:2px;color:var(--gray);margin-top:4px}
-.footer-back{font-family:var(--font-en);font-size:12px;letter-spacing:2px;color:var(--gray);text-transform:uppercase;border-bottom:1px solid var(--gray);padding-bottom:2px}
-.footer-back:hover{color:var(--cyan);border-color:var(--cyan)}
-.footer-logo{text-align:center;margin-bottom:40px}
-.footer-logo-text{font-family:var(--font-display);font-size:clamp(48px,10vw,120px);font-weight:900;color:var(--cyan);letter-spacing:4px;line-height:1}
-.footer-logo-text .fw{color:var(--white)}
-.footer-nav{display:flex;justify-content:center;gap:28px;list-style:none;margin-bottom:40px;flex-wrap:wrap}
-.footer-nav a{font-family:var(--font-en);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
-.footer-nav a:hover{color:var(--white)}
-.footer-sns{display:flex;justify-content:center;gap:20px;margin-bottom:40px}
-.footer-sns a{display:flex;align-items:center}
-.footer-sns svg{width:20px;height:20px;fill:var(--white);transition:fill .3s}
-.footer-sns a:hover svg{fill:var(--cyan)}
-.footer-copy{text-align:center;font-family:var(--font-en);font-size:11px;letter-spacing:2px;color:var(--gray)}
+.footer{padding:96px 0 48px;background:#fff;border-top:1px solid var(--border-soft);position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,var(--blue-pale) 0%,transparent 65%);pointer-events:none;opacity:.7}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:64px;flex-wrap:wrap;gap:20px;position:relative;z-index:1}
+.footer-location{font-family:var(--font-mono);font-size:12px;letter-spacing:2px;color:var(--text-sub);font-weight:500}
+.footer-time{font-family:var(--font-mono);font-size:13px;letter-spacing:2px;color:var(--blue-deep);margin-top:4px;font-weight:700}
+.footer-back{font-family:var(--font-en);font-size:12px;letter-spacing:2.5px;color:var(--text-mid);text-transform:uppercase;border:1px solid var(--border);padding:12px 22px;border-radius:99px;font-weight:600;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+.footer-back:hover{color:#fff;background:var(--grad-blue);border-color:transparent}
+.footer-logo{text-align:center;margin-bottom:36px;position:relative;z-index:1}
+.footer-nav{display:flex;justify-content:center;gap:32px;list-style:none;margin-bottom:36px;flex-wrap:wrap;position:relative;z-index:1}
+.footer-nav a{font-family:var(--font-en);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-sub);font-weight:600;transition:color .3s}
+.footer-nav a:hover{color:var(--blue-deep)}
+.footer-sns{display:flex;justify-content:center;gap:12px;margin-bottom:36px;position:relative;z-index:1}
+.footer-sns a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--blue-pale);transition:all .3s}
+.footer-sns a:hover{background:var(--grad-blue);transform:translateY(-3px)}
+.footer-sns svg{width:17px;height:17px;fill:var(--blue-deep);transition:fill .3s}
+.footer-sns a:hover svg{fill:#fff}
+.footer-copy{text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--text-mute);position:relative;z-index:1;font-weight:500}
 </style>
 </head>
 <body>
 
 <!-- ========== HEADER ========== -->
 <header class="header" id="header">
-  <a href="#top" class="header-logo">ZE<span class="c">N</span>OVA</a>
+  <a href="#top" class="header-logo">
+    <span class="zenova-logo logo-small">
+      <span class="ltr ltr-z">Z</span><span class="ltr ltr-e">e</span><span class="ltr ltr-n">N</span><span class="ltr ltr-o">o</span><span class="ltr ltr-v">V</span><span class="ltr ltr-a">a</span>
+    </span>
+  </a>
   <div class="header-nav-wrap" id="navWrap">
     <nav>
       <ul class="header-nav">
-        <li><a href="#top">TOP</a></li>
-        <li><a href="#news">NEWS</a></li>
-        <li><a href="#profile">PROFILE</a></li>
-        <li><a href="#service">SERVICE</a></li>
-        <li><a href="#works">WORKS</a></li>
-        <li><a href="#price">PRICE</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#price">Price</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="header-sns header-sns-mobile" style="display:flex;gap:16px;margin-top:32px">
+    <div class="header-sns header-sns-mobile" style="display:flex;gap:10px;margin-top:32px">
       <a href="https://x.com/sakuraizen1004" target="_blank" rel="noopener" aria-label="X">
-        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
       <a href="https://www.instagram.com/sakurai.zen.ai.account/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
     </div>
   </div>
@@ -262,11 +392,30 @@ img{max-width:100%;display:block}
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="top">
-  <div class="hero-watermark">Z</div>
-  <div class="hero-particles" id="particles"></div>
-  <h1 class="hero-title">ZE<span class="c">N</span>OVA</h1>
-  <div class="hero-line"></div>
-  <p class="hero-sub">AI Implementation &times; Business Automation</p>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <div class="hero-content">
+    <div class="hero-badge">AI × Automation × Implementation</div>
+    <div class="hero-title-wrap">
+      <h1 class="zenova-logo logo-hero">
+        <span class="ltr ltr-z">Z</span><span class="ltr ltr-e">e</span><span class="ltr ltr-n">N</span><span class="ltr ltr-o">o</span><span class="ltr ltr-v">V</span><span class="ltr ltr-a">a</span><span class="dot-deco"></span>
+      </h1>
+    </div>
+    <div class="hero-divider">
+      <span class="hero-divider-line"></span>
+      <span class="hero-divider-dot"></span>
+      <span class="hero-divider-line"></span>
+    </div>
+    <p class="hero-sub">AI Implementation &times; Business Automation</p>
+    <p class="hero-tagline">中小企業の"面倒"をゼロに。<br><strong>月75時間</strong>の業務削減を、ひとつのパッケージで。</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Services</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">7+</div><div class="hero-stat-label">Projects</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">75h</div><div class="hero-stat-label">Saved / Month</div></div>
+    </div>
+  </div>
   <div class="scroll-indicator">
     <span>Scroll</span>
     <div class="arrow"></div>
@@ -277,29 +426,42 @@ img{max-width:100%;display:block}
 <section class="section" id="news">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">NEWS</h2>
-      <a href="#" class="view-all">VIEW ALL NEWS</a>
+      <div>
+        <span class="section-eyebrow">Latest Updates</span>
+        <h2 class="section-title"><span class="em">News</span></h2>
+      </div>
+      <a href="#" class="view-all">VIEW ALL &rarr;</a>
     </div>
     <div class="news-list fade-in">
       <div class="news-item">
+        <span class="news-date">2026.05.22</span>
+        <span class="news-title-text">ポートフォリオ刷新・実績7事例に拡充</span>
+        <span class="news-cat site">SITE</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.04.26</span>
+        <span class="news-title-text">アフィリエイト完全自動化システム構築</span>
+        <span class="news-cat info">PROJECT</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.04.25</span>
+        <span class="news-title-text">note記事自動投稿システム稼働開始</span>
+        <span class="news-cat info">PROJECT</span>
+      </div>
+      <div class="news-item">
         <span class="news-date">2026.04.12</span>
         <span class="news-title-text">ZENOVA COMPANY 公式サイトリニューアル</span>
-        <span class="news-cat">SITE</span>
+        <span class="news-cat site">SITE</span>
       </div>
       <div class="news-item">
         <span class="news-date">2026.04.11</span>
         <span class="news-title-text">AI&times;副業テーマでX発信開始</span>
-        <span class="news-cat">SNS</span>
+        <span class="news-cat sns">SNS</span>
       </div>
       <div class="news-item">
         <span class="news-date">2026.04.09</span>
         <span class="news-title-text">ZENOVA COMPANY 設立</span>
-        <span class="news-cat">INFO</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2026.04.08</span>
-        <span class="news-title-text">ポートフォリオサイト公開</span>
-        <span class="news-cat">SITE</span>
+        <span class="news-cat info">INFO</span>
       </div>
     </div>
   </div>
@@ -309,35 +471,47 @@ img{max-width:100%;display:block}
 <section class="section" id="profile">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">PROFILE</h2>
-      <a href="#" class="view-all">VIEW ALL PROFILE</a>
+      <div>
+        <span class="section-eyebrow">About Me</span>
+        <h2 class="section-title"><span class="em">Profile</span></h2>
+      </div>
     </div>
     <div class="profile-grid fade-in">
-      <div class="profile-text">
-        AI実装と業務自動化を専門とする櫻井善（23歳）。<br>
-        印刷会社の営業をしながら、ZENOVA COMPANYを設立。<br>
-        チャットBot・業務自動化・LP・スライド制作・AI動画・AIエージェント・業務用ツールまで、<br>
-        中小企業の"面倒"をゼロにする仕組みを一気通貫で提供。
+      <div class="profile-card">
+        <span class="profile-card-num">/ 01</span>
+        <div class="profile-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </div>
+        <h3>Who I Am</h3>
+        <div class="profile-text">
+          AI実装と業務自動化を専門とする<span class="bold-blue">櫻井善（23歳）</span>。<br>
+          印刷会社の営業をしながら、ZENOVA COMPANYを設立。<br>
+          チャットBot・業務自動化・LP・スライド制作・AI動画・AIエージェント・業務用ツールまで、<span class="highlight">中小企業の"面倒"をゼロにする仕組み</span>を一気通貫で提供。
+        </div>
       </div>
-      <div class="profile-text">
-        "AIは難しい"を"AIは便利"に変えるのが仕事。<br>
-        Claude / GPT / Dify / n8n / GAS / Pythonを駆使し、<br>
-        月の作業時間を最大75時間削減する仕組みを構築。<br>
-        1案件から幅広く対応します。
+      <div class="profile-card">
+        <span class="profile-card-num">/ 02</span>
+        <div class="profile-card-icon">
+          <svg viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg>
+        </div>
+        <h3>What I Do</h3>
+        <div class="profile-text">
+          「AIは難しい」を「AIは便利」に変えるのが仕事。<br>
+          <span class="bold-blue">Claude / GPT / Dify / n8n / GAS / Python</span> を駆使し、<br>
+          <span class="highlight">月の作業時間を最大75時間削減</span>する仕組みを構築。<br>
+          1案件から幅広く対応します。
+        </div>
       </div>
     </div>
     <div class="profile-visual fade-in">
       <div class="pv-grid">
-        <div class="pv-cell"><span class="pv-cell-label">ZEN SAKURAI</span></div>
+        <div class="pv-cell"><span class="pv-cell-label">Zen Sakurai</span></div>
         <div class="pv-cell"><span class="pv-cell-label">AI AGENT</span></div>
         <div class="pv-cell"><span class="pv-cell-label">n8n</span></div>
         <div class="pv-cell"><span class="pv-cell-label">CLAUDE API</span></div>
         <div class="pv-cell"><span class="pv-cell-label">SLIDE / VIDEO</span></div>
         <div class="pv-cell"><span class="pv-cell-label">CUSTOM TOOL</span></div>
       </div>
-      <div class="pv-corner pv-corner--tl"></div>
-      <div class="pv-corner pv-corner--br"></div>
-      <div class="pv-overlay"></div>
     </div>
   </div>
 </section>
@@ -346,110 +520,115 @@ img{max-width:100%;display:block}
 <section class="section" id="service">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">SERVICE</h2>
+      <div>
+        <span class="section-eyebrow">What I Provide</span>
+        <h2 class="section-title"><span class="em">Service</span></h2>
+      </div>
     </div>
     <div class="service-grid">
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <rect x="4" y="6" width="40" height="30" rx="4"/>
-          <path d="M14 22l4 4 8-8"/>
-          <line x1="16" y1="42" x2="32" y2="42"/>
-          <line x1="24" y1="36" x2="24" y2="42"/>
-        </svg>
-        <div class="service-card-title">AI CHATBOT</div>
+        <span class="service-num">01</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="30" rx="4"/><path d="M14 22l4 4 8-8"/><line x1="16" y1="42" x2="32" y2="42"/><line x1="24" y1="36" x2="24" y2="42"/></svg>
+        </div>
+        <div class="service-card-title">AI Chatbot</div>
         <div class="service-card-sub">AIチャットBot構築</div>
-        <div class="service-card-desc">問い合わせ対応を24時間自動化。Dify・Claude APIを活用し、月の対応時間を最大75時間削減。</div>
-        <div class="service-card-price">&yen;70,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-desc">問い合わせ対応を24時間自動化。Dify・Claude APIを活用し、月の対応時間を<strong>最大75時間削減</strong>。</div>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;70,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <circle cx="24" cy="24" r="18"/>
-          <path d="M24 14v10l7 7"/>
-          <path d="M10 10l4 4M38 10l-4 4M10 38l4-4M38 38l-4-4"/>
-        </svg>
-        <div class="service-card-title">AUTOMATION</div>
+        <span class="service-num">02</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 7"/><path d="M10 10l4 4M38 10l-4 4M10 38l4-4M38 38l-4-4"/></svg>
+        </div>
+        <div class="service-card-title">Automation</div>
         <div class="service-card-sub">業務自動化</div>
         <div class="service-card-desc">n8n・GAS・Makeで定型業務を完全自動化。メール返信、Slack通知、レポート生成など。</div>
-        <div class="service-card-price">&yen;50,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;50,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <rect x="4" y="4" width="40" height="40" rx="4"/>
-          <line x1="4" y1="14" x2="44" y2="14"/>
-          <circle cx="10" cy="9" r="1.5" fill="var(--cyan)" stroke="none"/>
-          <circle cx="16" cy="9" r="1.5" fill="var(--cyan)" stroke="none"/>
-          <circle cx="22" cy="9" r="1.5" fill="var(--cyan)" stroke="none"/>
-          <path d="M14 24l6 6 10-12"/>
-        </svg>
-        <div class="service-card-title">WEB / LP</div>
+        <span class="service-num">03</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="4" width="40" height="40" rx="4"/><line x1="4" y1="14" x2="44" y2="14"/><circle cx="10" cy="9" r="1.5" fill="currentColor"/><circle cx="16" cy="9" r="1.5" fill="currentColor"/><circle cx="22" cy="9" r="1.5" fill="currentColor"/><path d="M14 24l6 6 10-12"/></svg>
+        </div>
+        <div class="service-card-title">Web / LP</div>
         <div class="service-card-sub">LP・Webサイト制作</div>
         <div class="service-card-desc">コンバージョン重視のLP設計。構成・コピーからコーディングまで一貫対応。</div>
-        <div class="service-card-price">&yen;100,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;100,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <rect x="4" y="8" width="40" height="28" rx="2"/>
-          <line x1="4" y1="40" x2="44" y2="40"/>
-          <line x1="20" y1="36" x2="20" y2="40"/>
-          <line x1="28" y1="36" x2="28" y2="40"/>
-          <path d="M12 20h16M12 26h20M12 32h12"/>
-        </svg>
-        <div class="service-card-title">SLIDE DESIGN</div>
+        <span class="service-num">04</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="28" rx="2"/><line x1="4" y1="40" x2="44" y2="40"/><line x1="20" y1="36" x2="20" y2="40"/><line x1="28" y1="36" x2="28" y2="40"/><path d="M12 20h16M12 26h20M12 32h12"/></svg>
+        </div>
+        <div class="service-card-title">Slide Design</div>
         <div class="service-card-sub">プレゼン・営業資料制作</div>
         <div class="service-card-desc">AIドラフト＋手動仕上げで、営業資料・提案書・ピッチ資料を最短即日。PowerPoint / Googleスライド対応。</div>
-        <div class="service-card-price">&yen;20,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;20,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <rect x="4" y="8" width="40" height="28" rx="3"/>
-          <polygon points="20,16 20,28 32,22" fill="var(--cyan)" stroke="none"/>
-          <line x1="14" y1="42" x2="34" y2="42"/>
-        </svg>
-        <div class="service-card-title">AI VIDEO</div>
+        <span class="service-num">05</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="28" rx="3"/><polygon points="20,16 20,28 32,22" fill="currentColor" stroke="none"/><line x1="14" y1="42" x2="34" y2="42"/></svg>
+        </div>
+        <div class="service-card-title">AI Video</div>
         <div class="service-card-sub">AI動画・ショート制作</div>
         <div class="service-card-desc">台本→音声→映像をAIで制作。SNSショート・商品PR・解説動画を1本から。縦型・横型どちらも対応。</div>
-        <div class="service-card-price">&yen;15,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;40,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <circle cx="24" cy="20" r="10"/>
-          <circle cx="24" cy="18" r="2" fill="var(--cyan)" stroke="none"/>
-          <path d="M20 24c1.5 1.5 6.5 1.5 8 0"/>
-          <line x1="18" y1="10" x2="14" y2="6"/>
-          <line x1="30" y1="10" x2="34" y2="6"/>
-          <path d="M10 40c0-6 6-10 14-10s14 4 14 10"/>
-        </svg>
-        <div class="service-card-title">AI AGENT</div>
+        <span class="service-num">06</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="10"/><circle cx="24" cy="18" r="2" fill="currentColor" stroke="none"/><path d="M20 24c1.5 1.5 6.5 1.5 8 0"/><line x1="18" y1="10" x2="14" y2="6"/><line x1="30" y1="10" x2="34" y2="6"/><path d="M10 40c0-6 6-10 14-10s14 4 14 10"/></svg>
+        </div>
+        <div class="service-card-title">AI Agent</div>
         <div class="service-card-sub">AIエージェント構築代行</div>
-        <div class="service-card-desc">自律的にタスクをこなすAIエージェントを構築。Claude / GPT / Dify / n8nを組み合わせ、業務の"考える部分"まで委任。</div>
-        <div class="service-card-price">&yen;120,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-desc">自律的にタスクをこなすAIエージェントを構築。Claude / GPT / Dify / n8nを組み合わせ、業務の<strong>"考える部分"まで委任</strong>。</div>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;120,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <rect x="6" y="10" width="36" height="28" rx="2"/>
-          <path d="M14 22l6 6-6 6M24 34h10"/>
-        </svg>
-        <div class="service-card-title">CUSTOM TOOL</div>
+        <span class="service-num">07</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 22l6 6-6 6M24 34h10"/></svg>
+        </div>
+        <div class="service-card-title">Custom Tool</div>
         <div class="service-card-sub">業務用ツール制作</div>
         <div class="service-card-desc">Excel/スプレッドシートに収まらない業務を、Web/GAS/Pythonの独自ツールで自動化。見積書発行・在庫管理・日報作成など。</div>
-        <div class="service-card-price">&yen;80,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;100,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
       <div class="service-card fade-in">
-        <svg class="service-icon" viewBox="0 0 48 48">
-          <path d="M24 4l4 12h12l-10 8 4 14-10-8-10 8 4-14-10-8h12z"/>
-        </svg>
-        <div class="service-card-title">AI CONSULTING</div>
+        <span class="service-num">08</span>
+        <div class="service-icon-wrap">
+          <svg class="service-icon" viewBox="0 0 48 48"><path d="M24 4l4 12h12l-10 8 4 14-10-8-10 8 4-14-10-8h12z"/></svg>
+        </div>
+        <div class="service-card-title">AI Consulting</div>
         <div class="service-card-sub">AI活用コンサル・顧問</div>
         <div class="service-card-desc">「何を自動化すべきか」の設計から着手。現場ヒアリング＋AIツール選定＋導入支援を一気通貫。</div>
-        <div class="service-card-price">&yen;30,000〜</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL &rarr;</a>
+        <div class="service-card-footer">
+          <div class="service-card-price">&yen;80,000〜</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="service-card-btn">DETAIL →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -459,103 +638,265 @@ img{max-width:100%;display:block}
 <section class="section" id="works">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">WORKS</h2>
+      <div>
+        <span class="section-eyebrow">Case Studies &amp; Projects</span>
+        <h2 class="section-title"><span class="em">Works</span></h2>
+      </div>
     </div>
     <div class="carousel-wrap fade-in">
       <div class="carousel-track" id="carouselTrack">
-        <!-- Work 1: Chatbot -->
+
+        <!-- Work 1 -->
         <div class="carousel-slide">
           <div class="work-card">
             <div class="work-card-visual">
+              <span class="work-card-badge">CASE 01 · CHATBOT</span>
               <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-                <rect width="400" height="250" fill="#06060a"/>
-                <rect x="30" y="120" width="160" height="50" rx="25" fill="none" stroke="#00CFFF" stroke-width="1" opacity=".3"/>
-                <rect x="210" y="50" width="160" height="50" rx="25" fill="none" stroke="#fff" stroke-width="1" opacity=".15"/>
-                <rect x="210" y="120" width="120" height="50" rx="25" fill="none" stroke="#fff" stroke-width="1" opacity=".15"/>
-                <rect x="30" y="50" width="140" height="50" rx="25" fill="none" stroke="#00CFFF" stroke-width="1" opacity=".3"/>
-                <circle cx="55" cy="75" r="6" fill="#00CFFF" opacity=".15"/>
-                <line x1="70" y1="72" x2="130" y2="72" stroke="#00CFFF" stroke-width="2" opacity=".3"/>
-                <line x1="70" y1="80" x2="110" y2="80" stroke="#00CFFF" stroke-width="2" opacity=".2"/>
-                <circle cx="235" cy="75" r="6" fill="#fff" opacity=".08"/>
-                <line x1="250" y1="72" x2="330" y2="72" stroke="#fff" stroke-width="2" opacity=".15"/>
-                <line x1="250" y1="80" x2="310" y2="80" stroke="#fff" stroke-width="2" opacity=".1"/>
-                <circle cx="55" cy="145" r="6" fill="#00CFFF" opacity=".15"/>
-                <line x1="70" y1="142" x2="150" y2="142" stroke="#00CFFF" stroke-width="2" opacity=".3"/>
-                <line x1="70" y1="150" x2="120" y2="150" stroke="#00CFFF" stroke-width="2" opacity=".2"/>
-                <text x="200" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#333" letter-spacing="3">AI CHATBOT INTERFACE</text>
+                <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0EEFB"/><stop offset="1" stop-color="#F4F8FE"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g1)"/>
+                <rect x="30" y="50" width="140" height="50" rx="25" fill="#fff" stroke="#3A8DDB" stroke-width="2"/>
+                <rect x="30" y="120" width="160" height="50" rx="25" fill="#fff" stroke="#3A8DDB" stroke-width="2"/>
+                <rect x="210" y="50" width="160" height="50" rx="25" fill="#fff" stroke="#7BC2F0" stroke-width="2"/>
+                <rect x="210" y="120" width="120" height="50" rx="25" fill="#fff" stroke="#7BC2F0" stroke-width="2"/>
+                <circle cx="55" cy="75" r="6" fill="#3A8DDB"/>
+                <line x1="70" y1="72" x2="130" y2="72" stroke="#3A8DDB" stroke-width="3" stroke-linecap="round"/>
+                <line x1="70" y1="82" x2="110" y2="82" stroke="#B3DDF7" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="235" cy="75" r="6" fill="#7BC2F0"/>
+                <line x1="250" y1="72" x2="330" y2="72" stroke="#7BC2F0" stroke-width="3" stroke-linecap="round"/>
+                <line x1="250" y1="82" x2="310" y2="82" stroke="#B3DDF7" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="55" cy="145" r="6" fill="#3A8DDB"/>
+                <line x1="70" y1="142" x2="150" y2="142" stroke="#3A8DDB" stroke-width="3" stroke-linecap="round"/>
+                <line x1="70" y1="152" x2="120" y2="152" stroke="#B3DDF7" stroke-width="3" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="work-card-body">
               <div class="work-card-title">問い合わせ対応の自動化</div>
-              <div class="work-card-row"><span class="work-label">Before</span><span>1件15分 &times; 1日10件 = 150分/日</span></div>
-              <div class="work-card-row"><span class="work-label">After</span><span>AIチャットBot導入 &rarr; 0分（完全自動応答）</span></div>
+              <div class="work-card-row"><span class="work-label">Before</span><span class="work-card-row-text">1件15分 &times; 1日10件 = 150分/日</span></div>
+              <div class="work-card-row"><span class="work-label after-label">After</span><span class="work-card-row-text">AIチャットBot導入 &rarr; 0分（完全自動応答）</span></div>
               <div class="work-card-result">月75時間の工数削減</div>
               <div class="work-card-note">※ 自社検証に基づく想定値です</div>
             </div>
           </div>
         </div>
-        <!-- Work 2: Email -->
+
+        <!-- Work 2 -->
         <div class="carousel-slide">
           <div class="work-card">
             <div class="work-card-visual">
+              <span class="work-card-badge">CASE 02 · EMAIL</span>
               <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-                <rect width="400" height="250" fill="#06060a"/>
-                <rect x="60" y="40" width="280" height="170" rx="6" fill="none" stroke="#333" stroke-width="1"/>
-                <polyline points="60,40 200,130 340,40" fill="none" stroke="#00CFFF" stroke-width="1" opacity=".4"/>
-                <line x1="100" y1="100" x2="220" y2="100" stroke="#fff" stroke-width="2" opacity=".1"/>
-                <line x1="100" y1="115" x2="260" y2="115" stroke="#fff" stroke-width="2" opacity=".08"/>
-                <line x1="100" y1="130" x2="240" y2="130" stroke="#fff" stroke-width="2" opacity=".06"/>
-                <line x1="100" y1="145" x2="200" y2="145" stroke="#fff" stroke-width="2" opacity=".04"/>
-                <path d="M270 150 l20 10 l-5 -8 l18 -20" fill="none" stroke="#00CFFF" stroke-width="1.5" opacity=".5"/>
-                <text x="290" y="168" font-family="Inter,sans-serif" font-size="9" fill="#00CFFF" opacity=".4" letter-spacing="1">AI DRAFT</text>
-                <text x="200" y="235" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#333" letter-spacing="3">EMAIL AUTOMATION</text>
+                <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5F1FC"/><stop offset="1" stop-color="#F0F7FE"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g2)"/>
+                <rect x="60" y="40" width="280" height="170" rx="14" fill="#fff" stroke="#5BB4F7" stroke-width="2"/>
+                <polyline points="60,40 200,130 340,40" fill="none" stroke="#5BB4F7" stroke-width="2" opacity=".7"/>
+                <line x1="100" y1="100" x2="220" y2="100" stroke="#B3DDF7" stroke-width="3" stroke-linecap="round"/>
+                <line x1="100" y1="115" x2="260" y2="115" stroke="#B3DDF7" stroke-width="3" stroke-linecap="round"/>
+                <line x1="100" y1="130" x2="240" y2="130" stroke="#7DDFE7" stroke-width="3" stroke-linecap="round"/>
+                <line x1="100" y1="145" x2="200" y2="145" stroke="#7DDFE7" stroke-width="3" stroke-linecap="round"/>
+                <path d="M270 150 l20 10 l-5 -8 l18 -20" fill="none" stroke="#1E5FA8" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="285" y="172" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1E5FA8" letter-spacing="1">AI DRAFT</text>
               </svg>
             </div>
             <div class="work-card-body">
               <div class="work-card-title">メール業務の効率化</div>
-              <div class="work-card-row"><span class="work-label">Before</span><span>返信に1件30分、1日5件 = 150分/日</span></div>
-              <div class="work-card-row"><span class="work-label">After</span><span>Claude APIで下書き自動生成 &rarr; 1件3分</span></div>
+              <div class="work-card-row"><span class="work-label">Before</span><span class="work-card-row-text">返信に1件30分、1日5件 = 150分/日</span></div>
+              <div class="work-card-row"><span class="work-label after-label">After</span><span class="work-card-row-text">Claude APIで下書き自動生成 &rarr; 1件3分</span></div>
               <div class="work-card-result">月45時間の工数削減</div>
               <div class="work-card-note">※ 自社検証に基づく想定値です</div>
             </div>
           </div>
         </div>
-        <!-- Work 3: LP/CVR -->
+
+        <!-- Work 3 -->
         <div class="carousel-slide">
           <div class="work-card">
             <div class="work-card-visual">
+              <span class="work-card-badge">CASE 03 · LP</span>
               <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-                <rect width="400" height="250" fill="#06060a"/>
-                <line x1="60" y1="200" x2="340" y2="200" stroke="#333" stroke-width="1"/>
-                <line x1="60" y1="200" x2="60" y2="40" stroke="#333" stroke-width="1"/>
-                <polyline points="80,180 130,170 180,160 230,120 280,80 320,50" fill="none" stroke="#00CFFF" stroke-width="2" opacity=".6"/>
-                <polyline points="80,185 130,182 180,178 230,170 280,165 320,155" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="4 3" opacity=".4"/>
-                <circle cx="320" cy="50" r="4" fill="#00CFFF" opacity=".8"/>
-                <circle cx="320" cy="155" r="3" fill="#555" opacity=".5"/>
-                <text x="330" y="54" font-family="Inter,sans-serif" font-size="10" fill="#00CFFF" opacity=".6">+200%</text>
-                <text x="75" y="220" font-family="Inter,sans-serif" font-size="9" fill="#555">CTR</text>
-                <text x="175" y="220" font-family="Inter,sans-serif" font-size="9" fill="#555">CVR</text>
-                <text x="275" y="220" font-family="Inter,sans-serif" font-size="9" fill="#555">CONV</text>
-                <rect x="90" y="155" width="30" height="45" fill="#00CFFF" opacity=".08"/>
-                <rect x="190" y="130" width="30" height="70" fill="#00CFFF" opacity=".08"/>
-                <rect x="290" y="90" width="30" height="110" fill="#00CFFF" opacity=".12"/>
-                <text x="200" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#333" letter-spacing="3">LP PERFORMANCE</text>
+                <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBF3FD"/><stop offset="1" stop-color="#E0EEFB"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g3)"/>
+                <line x1="60" y1="200" x2="340" y2="200" stroke="#B3DDF7" stroke-width="2"/>
+                <line x1="60" y1="200" x2="60" y2="40" stroke="#B3DDF7" stroke-width="2"/>
+                <rect x="90" y="155" width="30" height="45" fill="#B3DDF7" opacity=".6" rx="4"/>
+                <rect x="190" y="130" width="30" height="70" fill="#7BC2F0" opacity=".7" rx="4"/>
+                <rect x="290" y="80" width="30" height="120" fill="#3A8DDB" opacity=".8" rx="4"/>
+                <polyline points="80,180 130,170 180,160 230,120 280,80 320,50" fill="none" stroke="#1E5FA8" stroke-width="3" stroke-linecap="round"/>
+                <polyline points="80,185 130,182 180,178 230,170 280,165 320,155" fill="none" stroke="#7BC2F0" stroke-width="2" stroke-dasharray="4 3"/>
+                <circle cx="320" cy="50" r="6" fill="#1E5FA8"/>
+                <text x="330" y="54" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#1E5FA8">+200%</text>
               </svg>
             </div>
             <div class="work-card-body">
               <div class="work-card-title">LP制作によるCVR改善</div>
-              <div class="work-card-row"><span class="work-label">Before</span><span>広告CTR 0.8%、LP CVR 1.2%</span></div>
-              <div class="work-card-row"><span class="work-label">After</span><span>CTR 2.1%（+162%）、CVR 3.6%（+200%）</span></div>
+              <div class="work-card-row"><span class="work-label">Before</span><span class="work-card-row-text">広告CTR 0.8%、LP CVR 1.2%</span></div>
+              <div class="work-card-row"><span class="work-label after-label">After</span><span class="work-card-row-text">CTR 2.1%（+162%）、CVR 3.6%（+200%）</span></div>
               <div class="work-card-result">CVR 200%改善</div>
               <div class="work-card-note">※ 自社検証に基づく想定値です</div>
             </div>
           </div>
         </div>
+
+        <!-- Work 4 -->
+        <div class="carousel-slide">
+          <div class="work-card">
+            <div class="work-card-visual">
+              <span class="work-card-badge">CASE 04 · CONTENT AI</span>
+              <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0EEFB"/><stop offset="1" stop-color="#EBF8FB"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g4)"/>
+                <rect x="40" y="60" width="120" height="130" rx="14" fill="#fff" stroke="#3A8DDB" stroke-width="2"/>
+                <text x="100" y="85" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#3A8DDB">23:00</text>
+                <rect x="55" y="100" width="90" height="6" rx="3" fill="#B3DDF7"/>
+                <rect x="55" y="115" width="70" height="6" rx="3" fill="#B3DDF7"/>
+                <rect x="55" y="130" width="80" height="6" rx="3" fill="#B3DDF7"/>
+                <circle cx="100" cy="165" r="14" fill="#3A8DDB"/>
+                <text x="100" y="170" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="900" fill="#fff">AI</text>
+                <path d="M165 125 L235 125" stroke="#7DDFE7" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+                <polygon points="232,118 245,125 232,132" fill="#7DDFE7"/>
+                <rect x="250" y="60" width="120" height="130" rx="14" fill="#fff" stroke="#5BB4F7" stroke-width="2"/>
+                <text x="310" y="85" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#5BB4F7">10:00</text>
+                <rect x="265" y="100" width="90" height="60" rx="6" fill="#7BC2F0"/>
+                <text x="310" y="135" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff">note</text>
+                <circle cx="310" cy="170" r="6" fill="#1E5FA8"/>
+                <text x="310" y="174" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="800" fill="#fff">✓</text>
+              </svg>
+            </div>
+            <div class="work-card-body">
+              <div class="work-card-title">note記事の完全自動投稿システム</div>
+              <div class="work-card-row"><span class="work-label">Stack</span><span class="work-card-row-text">Claude API + DALL-E + Playwright</span></div>
+              <div class="work-card-row"><span class="work-label after-label">Flow</span><span class="work-card-row-text">毎晩23時生成 → 毎朝10時自動投稿</span></div>
+              <div class="work-card-result">記事投稿の完全無人化</div>
+              <div class="work-card-note">※ 自社開発・運用中（2026/04〜）</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work 5 -->
+        <div class="carousel-slide">
+          <div class="work-card">
+            <div class="work-card-visual">
+              <span class="work-card-badge">CASE 05 · AFFILIATE AI</span>
+              <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBF3FD"/><stop offset="1" stop-color="#E0EEFB"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g5)"/>
+                <circle cx="200" cy="125" r="42" fill="#fff" stroke="#1E5FA8" stroke-width="3"/>
+                <text x="200" y="120" text-anchor="middle" font-family="Bodoni Moda,serif" font-style="italic" font-size="14" font-weight="900" fill="#1E5FA8">ZENOVA</text>
+                <text x="200" y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#3A8DDB">AFFILIATE</text>
+                <g stroke="#7BC2F0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 4">
+                  <line x1="170" y1="100" x2="100" y2="60"/>
+                  <line x1="230" y1="100" x2="300" y2="60"/>
+                  <line x1="170" y1="150" x2="100" y2="190"/>
+                  <line x1="230" y1="150" x2="300" y2="190"/>
+                  <line x1="158" y1="125" x2="60" y2="125"/>
+                  <line x1="242" y1="125" x2="340" y2="125"/>
+                </g>
+                <g font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle">
+                  <rect x="60" y="45" width="80" height="28" rx="14" fill="#fff" stroke="#3A8DDB" stroke-width="2"/><text x="100" y="63" fill="#3A8DDB">楽天ROOM</text>
+                  <rect x="260" y="45" width="80" height="28" rx="14" fill="#fff" stroke="#3A8DDB" stroke-width="2"/><text x="300" y="63" fill="#3A8DDB">Pinterest</text>
+                  <rect x="60" y="178" width="80" height="28" rx="14" fill="#fff" stroke="#5BB4F7" stroke-width="2"/><text x="100" y="196" fill="#5BB4F7">X / Twitter</text>
+                  <rect x="260" y="178" width="80" height="28" rx="14" fill="#fff" stroke="#5BB4F7" stroke-width="2"/><text x="300" y="196" fill="#5BB4F7">note</text>
+                  <rect x="10" y="113" width="50" height="24" rx="12" fill="#fff" stroke="#7DDFE7" stroke-width="2"/><text x="35" y="129" fill="#2A8FA4">Amazon</text>
+                  <rect x="340" y="113" width="50" height="24" rx="12" fill="#fff" stroke="#7DDFE7" stroke-width="2"/><text x="365" y="129" fill="#2A8FA4">Rakuten</text>
+                </g>
+              </svg>
+            </div>
+            <div class="work-card-body">
+              <div class="work-card-title">アフィリエイト完全自動化システム</div>
+              <div class="work-card-row"><span class="work-label">Stack</span><span class="work-card-row-text">Node.js + Claude + Playwright + 楽天API</span></div>
+              <div class="work-card-row"><span class="work-label after-label">Scope</span><span class="work-card-row-text">楽天ROOM × Pinterest × X × note 一括連携</span></div>
+              <div class="work-card-result">作業時間 月15分のみ</div>
+              <div class="work-card-note">※ 自社開発・運用中（2026/04〜）</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work 6 -->
+        <div class="carousel-slide">
+          <div class="work-card">
+            <div class="work-card-visual">
+              <span class="work-card-badge">CASE 06 · WEB APP</span>
+              <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0EEFB"/><stop offset="1" stop-color="#EBF8FB"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g6)"/>
+                <rect x="40" y="40" width="320" height="170" rx="14" fill="#fff" stroke="#3A8DDB" stroke-width="2"/>
+                <rect x="40" y="40" width="320" height="32" rx="14" fill="#3A8DDB"/>
+                <text x="200" y="60" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#fff">KAKEIBO DASHBOARD</text>
+                <rect x="60" y="92" width="80" height="48" rx="10" fill="#E0EEFB"/>
+                <text x="100" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#1E5FA8" font-weight="700">INCOME</text>
+                <text x="100" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="900" fill="#1E5FA8">+320k</text>
+                <rect x="150" y="92" width="80" height="48" rx="10" fill="#EAF8FB"/>
+                <text x="190" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#2A8FA4" font-weight="700">EXPENSE</text>
+                <text x="190" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="900" fill="#2A8FA4">-180k</text>
+                <rect x="240" y="92" width="80" height="48" rx="10" fill="#EBF3FD"/>
+                <text x="280" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#3A8DDB" font-weight="700">BALANCE</text>
+                <text x="280" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="900" fill="#3A8DDB">+140k</text>
+                <polyline points="60,190 100,175 140,182 180,165 220,158 260,168 300,150 340,160" fill="none" stroke="#1E5FA8" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="100" cy="175" r="3" fill="#1E5FA8"/>
+                <circle cx="180" cy="165" r="3" fill="#1E5FA8"/>
+                <circle cx="260" cy="168" r="3" fill="#1E5FA8"/>
+                <circle cx="340" cy="160" r="3" fill="#1E5FA8"/>
+              </svg>
+            </div>
+            <div class="work-card-body">
+              <div class="work-card-title">家計簿Webアプリ開発</div>
+              <div class="work-card-row"><span class="work-label">Stack</span><span class="work-card-row-text">React + TypeScript + Vite + Dexie.js</span></div>
+              <div class="work-card-row"><span class="work-label after-label">Feature</span><span class="work-card-row-text">IndexedDB永続化 / Rechartsグラフ / 月次自動集計</span></div>
+              <div class="work-card-result">完全オフライン動作</div>
+              <div class="work-card-note">※ オーナー個人向けに開発・運用中</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work 7 -->
+        <div class="carousel-slide">
+          <div class="work-card">
+            <div class="work-card-visual">
+              <span class="work-card-badge">CASE 07 · SALES AI</span>
+              <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                <defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0EEFB"/><stop offset="1" stop-color="#F4F8FE"/></linearGradient></defs>
+                <rect width="400" height="250" fill="url(#g7)"/>
+                <g font-family="Inter,sans-serif" font-size="10" font-weight="700">
+                  <rect x="20" y="50" width="70" height="38" rx="10" fill="#fff" stroke="#3A8DDB" stroke-width="2"/>
+                  <text x="55" y="68" text-anchor="middle" fill="#3A8DDB">収集</text>
+                  <text x="55" y="80" text-anchor="middle" fill="#3A8DDB" font-size="8">PR TIMES</text>
+                  <rect x="105" y="50" width="70" height="38" rx="10" fill="#fff" stroke="#5BB4F7" stroke-width="2"/>
+                  <text x="140" y="68" text-anchor="middle" fill="#5BB4F7">抽出</text>
+                  <text x="140" y="80" text-anchor="middle" fill="#5BB4F7" font-size="8">連絡先</text>
+                  <rect x="190" y="50" width="70" height="38" rx="10" fill="#fff" stroke="#7BC2F0" stroke-width="2"/>
+                  <text x="225" y="68" text-anchor="middle" fill="#3A8DDB">スコア</text>
+                  <text x="225" y="80" text-anchor="middle" fill="#3A8DDB" font-size="8">中小企業</text>
+                  <rect x="275" y="50" width="70" height="38" rx="10" fill="#fff" stroke="#7DDFE7" stroke-width="2"/>
+                  <text x="310" y="68" text-anchor="middle" fill="#2A8FA4">文面</text>
+                  <text x="310" y="80" text-anchor="middle" fill="#2A8FA4" font-size="8">Claude</text>
+                  <line x1="90" y1="69" x2="105" y2="69" stroke="#3A8DDB" stroke-width="2"/>
+                  <line x1="175" y1="69" x2="190" y2="69" stroke="#5BB4F7" stroke-width="2"/>
+                  <line x1="260" y1="69" x2="275" y2="69" stroke="#7BC2F0" stroke-width="2"/>
+                </g>
+                <rect x="120" y="140" width="160" height="58" rx="14" fill="#fff" stroke="#1E5FA8" stroke-width="2"/>
+                <text x="200" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#1E5FA8">送信＋ログ記録</text>
+                <text x="200" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#3A8DDB">Playwright / Google Sheets</text>
+                <path d="M200 92 L200 138" stroke="#1E5FA8" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 3"/>
+                <polygon points="194,134 200,142 206,134" fill="#1E5FA8"/>
+                <circle cx="200" cy="220" r="14" fill="#1E5FA8"/>
+                <text x="200" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="900" fill="#fff">20/日</text>
+              </svg>
+            </div>
+            <div class="work-card-body">
+              <div class="work-card-title">AI自動営業システム</div>
+              <div class="work-card-row"><span class="work-label">Stack</span><span class="work-card-row-text">Python + Playwright + Claude API</span></div>
+              <div class="work-card-row"><span class="work-label after-label">Flow</span><span class="work-card-row-text">候補収集→スコアリング→文面生成→自動送信</span></div>
+              <div class="work-card-result">毎日20件を完全自動営業</div>
+              <div class="work-card-note">※ 自社開発・運用中（毎日11時/14時稼働）</div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="carousel-nav">
         <button class="carousel-btn" id="carouselPrev" aria-label="前へ">
           <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
         </button>
+        <div class="carousel-dots" id="carouselDots"></div>
         <button class="carousel-btn" id="carouselNext" aria-label="次へ">
           <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
         </button>
@@ -568,14 +909,16 @@ img{max-width:100%;display:block}
 <section class="section" id="price">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">PRICE</h2>
+      <div>
+        <span class="section-eyebrow">Choose Your Plan</span>
+        <h2 class="section-title"><span class="em">Price</span></h2>
+      </div>
     </div>
     <div class="price-grid">
       <div class="price-card fade-in">
-        <svg class="price-icon" viewBox="0 0 40 40">
-          <circle cx="20" cy="20" r="16"/>
-          <path d="M16 14h8M16 20h8M16 26h4"/>
-        </svg>
+        <div class="price-icon-wrap">
+          <svg class="price-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M16 14h8M16 20h8M16 26h4"/></svg>
+        </div>
         <div class="price-plan-en">LIGHT</div>
         <div class="price-plan-jp">ライト</div>
         <div class="price-amount">&yen;30,000</div>
@@ -583,33 +926,30 @@ img{max-width:100%;display:block}
       </div>
       <div class="price-card popular fade-in">
         <div class="price-badge">POPULAR</div>
-        <svg class="price-icon" viewBox="0 0 40 40">
-          <rect x="4" y="8" width="32" height="24" rx="3"/>
-          <path d="M12 20l4 4 8-8"/>
-        </svg>
+        <div class="price-icon-wrap">
+          <svg class="price-icon" viewBox="0 0 40 40"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M12 20l4 4 8-8"/></svg>
+        </div>
         <div class="price-plan-en">STANDARD</div>
         <div class="price-plan-jp">スタンダード</div>
         <div class="price-amount">&yen;70,000〜</div>
         <div class="price-desc">チャットBot構築<br>or 業務自動化1フロー</div>
       </div>
       <div class="price-card fade-in">
-        <svg class="price-icon" viewBox="0 0 40 40">
-          <polygon points="20,4 36,14 36,30 20,36 4,30 4,14"/>
-          <path d="M14 20l4 4 8-8"/>
-        </svg>
+        <div class="price-icon-wrap">
+          <svg class="price-icon" viewBox="0 0 40 40"><polygon points="20,4 36,14 36,30 20,36 4,30 4,14"/><path d="M14 20l4 4 8-8"/></svg>
+        </div>
         <div class="price-plan-en">PREMIUM</div>
         <div class="price-plan-jp">プレミアム</div>
         <div class="price-amount">&yen;200,000〜</div>
         <div class="price-desc">LP制作＋Bot＋自動化の<br>フルパッケージ</div>
       </div>
       <div class="price-card fade-in">
-        <svg class="price-icon" viewBox="0 0 40 40">
-          <circle cx="20" cy="16" r="8"/>
-          <path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
-        </svg>
+        <div class="price-icon-wrap">
+          <svg class="price-icon" viewBox="0 0 40 40"><circle cx="20" cy="16" r="8"/><path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12"/></svg>
+        </div>
         <div class="price-plan-en">ADVISOR</div>
         <div class="price-plan-jp">顧問</div>
-        <div class="price-amount">&yen;40,000<span style="font-size:14px;font-weight:400">/月</span></div>
+        <div class="price-amount">&yen;50,000<span style="font-size:14px;font-weight:600">/月</span></div>
         <div class="price-desc">月額AI活用サポート<br>月2回MTG＋チャット</div>
       </div>
     </div>
@@ -619,9 +959,12 @@ img{max-width:100%;display:block}
 <!-- ========== CTA ========== -->
 <section class="cta-section fade-in">
   <div class="container">
-    <div class="cta-title">あなたの業務、AIでどこまで自動化できる？</div>
-    <div class="cta-sub">1時間のヒアリングで"月◯時間削れるポイント"をお伝えします。完全無料。</div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="cta-btn">無料診断を申し込む &rarr;</a>
+    <div class="cta-inner">
+      <div class="cta-badge">Free Consultation</div>
+      <div class="cta-title">あなたの業務、AIでどこまで自動化できる？</div>
+      <div class="cta-sub">1時間のヒアリングで"月◯時間削れるポイント"をお伝えします。完全無料。</div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform" target="_blank" rel="noopener" class="cta-btn">無料診断を申し込む<span class="cta-btn-arrow">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
@@ -629,7 +972,10 @@ img{max-width:100%;display:block}
 <section class="section" id="faq">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">FAQ</h2>
+      <div>
+        <span class="section-eyebrow">Frequently Asked</span>
+        <h2 class="section-title"><span class="em">FAQ</span></h2>
+      </div>
     </div>
     <div class="faq-list fade-in">
       <div class="faq-item">
@@ -660,14 +1006,20 @@ img{max-width:100%;display:block}
 <section class="section" id="contact">
   <div class="container">
     <div class="section-header fade-in">
-      <h2 class="section-title">CONTACT</h2>
+      <div>
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="section-title"><span class="em">Contact</span></h2>
+      </div>
     </div>
-    <div class="contact-info fade-in">
-      <p>無料AI活用診断のお申し込み。1時間のオンラインヒアリングで、"月◯時間削れるポイント"をお伝えします。</p>
-      <p>直接のご連絡：<a href="mailto:zen.sakurai1004@gmail.com">zen.sakurai1004@gmail.com</a></p>
-    </div>
-    <div class="fade-in" style="text-align:center;padding:40px 0">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform?usp=header" target="_blank" rel="noopener" class="cta-btn">無料診断を申し込む &rarr;</a>
+    <div class="contact-card fade-in">
+      <div class="contact-info">
+        <p>無料AI活用診断のお申し込み。</p>
+        <p>1時間のオンラインヒアリングで、<span class="bold-blue">"月◯時間削れるポイント"</span>をお伝えします。</p>
+        <a href="mailto:zen.sakurai1004@gmail.com" class="contact-mail">zen.sakurai1004@gmail.com</a>
+      </div>
+      <div class="contact-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6i7v-bSReZdJW4901HYps1urwEYo_TtvXF6nAdHuvvnVRiQ/viewform?usp=header" target="_blank" rel="noopener" class="cta-btn">無料診断を申し込む<span class="cta-btn-arrow">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -680,19 +1032,21 @@ img{max-width:100%;display:block}
         <div class="footer-location">TOKYO, JAPAN</div>
         <div class="footer-time" id="footerTime"></div>
       </div>
-      <a href="#top" class="footer-back">BACK TO TOP</a>
+      <a href="#top" class="footer-back">BACK TO TOP &uarr;</a>
     </div>
     <div class="footer-logo">
-      <div class="footer-logo-text">ZE<span class="fw">N</span>OVA</div>
+      <div class="zenova-logo logo-footer">
+        <span class="ltr ltr-z">Z</span><span class="ltr ltr-e">e</span><span class="ltr ltr-n">N</span><span class="ltr ltr-o">o</span><span class="ltr ltr-v">V</span><span class="ltr ltr-a">a</span><span class="dot-deco"></span>
+      </div>
     </div>
     <ul class="footer-nav">
-      <li><a href="#top">TOP</a></li>
-      <li><a href="#news">NEWS</a></li>
-      <li><a href="#profile">PROFILE</a></li>
-      <li><a href="#service">SERVICE</a></li>
-      <li><a href="#works">WORKS</a></li>
-      <li><a href="#price">PRICE</a></li>
-      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#top">Top</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#price">Price</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-sns">
       <a href="https://x.com/sakuraizen1004" target="_blank" rel="noopener" aria-label="X">
@@ -702,7 +1056,7 @@ img{max-width:100%;display:block}
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
     </div>
-    <div class="footer-copy">&copy; 2026 ZE<span style="color:var(--cyan)">N</span>OVA COMPANY</div>
+    <div class="footer-copy">&copy; 2026 ZENOVA COMPANY. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
 
@@ -733,23 +1087,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* ===== Hero Particles ===== */
-(function(){
-  const container = document.getElementById('particles');
-  for (let i = 0; i < 20; i++) {
-    const s = document.createElement('span');
-    s.style.left = Math.random() * 100 + '%';
-    s.style.top = (60 + Math.random() * 40) + '%';
-    s.style.animationDuration = (4 + Math.random() * 8) + 's';
-    s.style.animationDelay = Math.random() * 6 + 's';
-    s.style.width = s.style.height = (1 + Math.random() * 2) + 'px';
-    container.appendChild(s);
-  }
-})();
-
 /* ===== Carousel ===== */
 const track = document.getElementById('carouselTrack');
 const slides = track.querySelectorAll('.carousel-slide');
+const dotsContainer = document.getElementById('carouselDots');
 let currentSlide = 0;
 function slidesPerView() {
   if (window.innerWidth >= 1100) return 3;
@@ -757,9 +1098,21 @@ function slidesPerView() {
   return 1;
 }
 function maxSlide() { return Math.max(0, slides.length - slidesPerView()); }
+function buildDots(){
+  dotsContainer.innerHTML = '';
+  const total = maxSlide() + 1;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', (i + 1) + '枚目');
+    dot.addEventListener('click', () => { currentSlide = i; updateCarousel(); });
+    dotsContainer.appendChild(dot);
+  }
+}
 function updateCarousel() {
   const slideWidth = 100 / slidesPerView();
   track.style.transform = 'translateX(-' + (currentSlide * slideWidth) + '%)';
+  dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
 }
 document.getElementById('carouselPrev').addEventListener('click', () => {
   currentSlide = Math.max(0, currentSlide - 1);
@@ -771,8 +1124,11 @@ document.getElementById('carouselNext').addEventListener('click', () => {
 });
 window.addEventListener('resize', () => {
   currentSlide = Math.min(currentSlide, maxSlide());
+  buildDots();
   updateCarousel();
 });
+buildDots();
+updateCarousel();
 
 /* ===== FAQ Accordion ===== */
 document.querySelectorAll('.faq-question').forEach(btn => {
@@ -797,7 +1153,7 @@ function updateClock() {
   const h = String(now.getHours()).padStart(2, '0');
   const m = String(now.getMinutes()).padStart(2, '0');
   const s = String(now.getSeconds()).padStart(2, '0');
-  document.getElementById('footerTime').textContent = h + ':' + m + ':' + s;
+  document.getElementById('footerTime').textContent = h + ':' + m + ':' + s + ' JST';
 }
 updateClock();
 setInterval(updateClock, 1000);
