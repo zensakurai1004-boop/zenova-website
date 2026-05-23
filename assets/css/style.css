@@ -1,40 +1,48 @@
 /* =========================================
-   ZENOVA — Complete Redesign
-   Fonts: Shippori Mincho × Playfair Display
-   Theme: White × Blue/Purple, Photo Backgrounds
+   ZENOVA — Pastel Rebrand 2026-05-24
+   Fonts: Noto Serif JP × Bodoni Moda
+   Theme: White × Pastel Blue × Pastel Green
+   名刺デザイン(v20)と完全統一
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
 /* =========================================
-   VARIABLES
+   VARIABLES — Pastel Palette
    ========================================= */
 :root {
-  --primary:       #3D6CF4;
-  --secondary:     #7B44F0;
-  --accent:        #F96A2B;
-  --gradient:      linear-gradient(135deg, #3D6CF4 0%, #7B44F0 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(61,108,244,.07) 0%, rgba(123,68,240,.07) 100%);
-  --gradient-text: linear-gradient(135deg, #3D6CF4, #7B44F0);
+  /* Palette（名刺v20と同一） */
+  --pastel-blue:    #B4D7E6;   /* RGB(180,215,230) */
+  --pastel-green:   #C8E1D2;   /* RGB(200,225,210) */
+  --pastel-blue-light:  #E3F0F4;
+  --pastel-green-light: #E8F2EC;
 
-  --bg:      #FAFAF8;
+  --primary:        #1C507D;   /* ACCENT 濃いネイビーブルー */
+  --primary-deep:   #123763;
+  --secondary:      #7AAFC3;   /* 中間ブルー */
+  --accent:         #1C507D;
+  --gradient:       linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-green) 100%);
+  --gradient-soft:  linear-gradient(135deg, rgba(180,215,230,.20) 0%, rgba(200,225,210,.20) 100%);
+  --gradient-text:  linear-gradient(135deg, #1C507D, #4F8AAB);
+
+  --bg:      #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-dark: #080A18;
-  --bg-warm: #F4F2EE;
+  --bg-dark: #0F1928;          /* INK：本文の濃色 */
+  --bg-warm: #F4FAFC;          /* パステルブルーの極薄 */
 
-  --text:       #0C0C18;
-  --text-sub:   #4B5563;
-  --text-muted: #9CA3AF;
-  --text-light: rgba(255,255,255,.9);
+  --text:       #0F1928;       /* INK */
+  --text-sub:   #5A6476;       /* GRAY */
+  --text-muted: #8C98A8;       /* LIGHT_GRAY */
+  --text-light: rgba(255,255,255,.92);
 
-  --border:        #E8E8EE;
-  --border-subtle: #F0F0F4;
+  --border:        #D7E5EC;
+  --border-subtle: #ECF2F5;
 
-  --shadow-xs: 0 1px  6px rgba(12,12,24,.05);
-  --shadow-sm: 0 2px 14px rgba(12,12,24,.07);
-  --shadow:    0 6px 28px rgba(12,12,24,.09);
-  --shadow-lg: 0 16px 52px rgba(12,12,24,.12);
-  --shadow-xl: 0 28px 72px rgba(12,12,24,.16);
+  --shadow-xs: 0 1px  6px rgba(28,80,125,.06);
+  --shadow-sm: 0 2px 14px rgba(28,80,125,.08);
+  --shadow:    0 6px 28px rgba(28,80,125,.10);
+  --shadow-lg: 0 16px 52px rgba(28,80,125,.14);
+  --shadow-xl: 0 28px 72px rgba(28,80,125,.18);
 
   --radius-sm:   8px;
   --radius:      14px;
@@ -42,9 +50,9 @@
   --radius-xl:   32px;
   --radius-full: 9999px;
 
-  --font-serif-jp: 'Shippori Mincho B1', 'Yu Mincho', '游明朝', serif;
-  --font-serif-en: 'Playfair Display', Georgia, serif;
-  --font-sans:     'Noto Sans JP', sans-serif;
+  --font-serif-jp: 'Noto Serif JP', 'Hiragino Mincho ProN', 'YuMincho', '游明朝', serif;
+  --font-serif-en: 'Bodoni Moda', 'Bodoni 72', 'Didot', Georgia, serif;
+  --font-sans:     'Noto Sans JP', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
 
   --nav-h: 72px;
   --ease:  cubic-bezier(.4,0,.2,1);
@@ -100,7 +108,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 #navbar.scrolled {
-  background: rgba(250,250,248,.96);
+  background: rgba(255,255,255,.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(0,0,0,.06);
@@ -113,8 +121,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .nav-logo {
   font-family: var(--font-serif-en);
   font-weight: 900; font-size: 1.5rem;
-  letter-spacing: .04em;
-  color: #fff;
+  letter-spacing: .12em;        /* 名刺と同じ字間広めに */
+  color: var(--text);
   margin-right: auto;
   transition: color var(--t);
 }
@@ -131,30 +139,31 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-sans);
   font-weight: 500; font-size: .85rem;
   letter-spacing: .04em; text-transform: uppercase;
-  color: rgba(255,255,255,.8);
+  color: var(--text-sub);
   transition: color var(--t);
 }
 #navbar.scrolled .nav-links a { color: var(--text-sub); }
-.nav-links a:hover { color: #fff; }
+.nav-links a:hover { color: var(--primary); }
 #navbar.scrolled .nav-links a:hover { color: var(--primary); }
 
 .nav-cta { flex-shrink: 0; }
 
-/* On top of photo: white border button */
+/* Pastel: primary border button */
 .btn-nav {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 22px;
-  border: 1.5px solid rgba(255,255,255,.6);
+  border: 1.5px solid var(--primary);
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
   font-weight: 600; font-size: .82rem;
   letter-spacing: .04em;
-  color: #fff;
+  color: var(--primary);
+  background: transparent;
   transition: all var(--t);
 }
 .btn-nav:hover {
-  background: rgba(255,255,255,.15);
-  border-color: #fff;
+  background: var(--primary);
+  color: #fff;
 }
 #navbar.scrolled .btn-nav {
   border-color: var(--primary);
@@ -173,7 +182,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .hamburger span {
   display: block; width: 24px; height: 2px;
-  background: #fff; border-radius: 2px;
+  background: var(--text); border-radius: 2px;
   transition: transform var(--t) var(--ease), opacity var(--t), background var(--t);
 }
 #navbar.scrolled .hamburger span { background: var(--text); }
@@ -185,7 +194,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .mobile-menu {
   display: none;
   position: fixed; top: var(--nav-h); left: 0; right: 0;
-  background: rgba(250,250,248,.98);
+  background: rgba(255,255,255,.98);
   backdrop-filter: blur(16px);
   border-top: 1px solid var(--border);
   padding: 28px 32px;
@@ -222,11 +231,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .btn-primary {
   background: var(--gradient); color: #fff;
-  box-shadow: 0 4px 20px rgba(61,108,244,.28);
+  box-shadow: 0 4px 20px rgba(28,80,125,.20);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(61,108,244,.36);
+  box-shadow: 0 8px 32px rgba(28,80,125,.28);
 }
 .btn-outline {
   border: 2px solid var(--primary); color: var(--primary);
@@ -320,11 +329,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .hero-overlay {
   position: absolute; inset: 0;
+  /* パステル：白からブルー→グリーンへ柔らかく */
   background: linear-gradient(
     160deg,
-    rgba(8,10,24,.50) 0%,
-    rgba(8,10,24,.65) 50%,
-    rgba(8,10,24,.85) 100%
+    rgba(255,255,255,.80) 0%,
+    rgba(180,215,230,.78) 50%,
+    rgba(200,225,210,.82) 100%
   );
 }
 .hero-net {
@@ -346,7 +356,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-sans);
   font-size: .72rem; font-weight: 700;
   letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(255,255,255,.6);
+  color: var(--primary);
   margin-bottom: 24px;
 }
 .hero-eyebrow::before {
@@ -360,19 +370,19 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: .04em;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 24px;
 }
 .hero-title em {
   font-style: italic;
   font-family: var(--font-serif-en);
-  background: linear-gradient(90deg, #6ea4ff, #a67bff);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .hero-sub {
-  font-size: 1rem; color: rgba(255,255,255,.7);
+  font-size: 1rem; color: var(--text-sub);
   line-height: 1.9; margin-bottom: 40px;
   max-width: 480px;
 }
@@ -381,9 +391,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* Stats bar */
 .hero-stats-bar {
   position: relative; z-index: 1;
-  border-top: 1px solid rgba(255,255,255,.1);
-  background: rgba(8,10,24,.5);
-  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(28,80,125,.10);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
 }
 .hero-stats-inner {
   display: flex; align-items: stretch;
@@ -392,13 +402,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .hero-stat {
   flex: 1; padding: 22px 0;
   display: flex; flex-direction: column; align-items: center;
-  border-right: 1px solid rgba(255,255,255,.08);
+  border-right: 1px solid rgba(28,80,125,.08);
 }
 .hero-stat:last-child { border-right: none; }
 .hero-stat-n {
   font-family: var(--font-serif-en);
   font-size: 1.75rem; font-weight: 700;
-  background: linear-gradient(90deg, #6ea4ff, #a67bff);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -409,7 +419,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-sans);
   font-size: .68rem; font-weight: 600;
   letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  color: var(--text-sub);
 }
 
 /* Scroll hint */
@@ -422,11 +432,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-sans);
   font-size: .68rem; letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
+  color: var(--text-sub);
 }
 .scroll-line {
   width: 1px; height: 64px;
-  background: linear-gradient(to bottom, rgba(255,255,255,.3), transparent);
+  background: linear-gradient(to bottom, var(--primary), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 @keyframes scrollPulse {
@@ -549,12 +559,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(61,108,244,.25);
+  border-color: rgba(28,80,125,.20);
 }
 .service-card.featured {
   grid-column: span 2;
-  background: linear-gradient(135deg, #FAFBFF 0%, #F0F3FF 100%);
-  border-color: rgba(61,108,244,.15);
+  background: linear-gradient(135deg, var(--pastel-blue-light) 0%, var(--pastel-green-light) 100%);
+  border-color: rgba(28,80,125,.12);
 }
 
 .sc-icon {
@@ -572,7 +582,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   color: var(--primary);
   background: var(--gradient-soft);
   padding: 3px 10px; border-radius: var(--radius-full);
-  border: 1px solid rgba(61,108,244,.15);
+  border: 1px solid rgba(28,80,125,.12);
   display: inline-block; margin-bottom: 12px;
 }
 .sc-name {
@@ -629,9 +639,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   position: absolute; inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(8,10,24,.15) 0%,
-    rgba(8,10,24,.45) 70%,
-    rgba(8,10,24,.7) 100%
+    rgba(15,25,40,.10) 0%,
+    rgba(15,25,40,.25) 70%,
+    rgba(15,25,40,.45) 100%
   );
 }
 .about-photo-caption {
@@ -733,7 +743,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--gradient);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 4px 20px rgba(61,108,244,.3);
+  box-shadow: 0 4px 20px rgba(28,80,125,.25);
 }
 .step-icon {
   width: 32px; height: 32px;
@@ -772,7 +782,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   color: rgba(255,255,255,.5);
   justify-content: center;
 }
-.cta-section .eyebrow::before { background: linear-gradient(90deg, rgba(61,108,244,.8), rgba(123,68,240,.8)); }
+.cta-section .eyebrow::before { background: linear-gradient(90deg, rgba(28,80,125,.85), rgba(122,175,195,.85)); }
 .cta-heading {
   font-family: var(--font-serif-jp);
   font-size: clamp(1.75rem, 3.5vw, 3rem);
@@ -790,7 +800,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    FOOTER
    ========================================= */
 .footer {
-  background: #06060E;
+  background: var(--bg-dark);
   padding: 72px 0 36px;
 }
 .footer-inner {
@@ -829,7 +839,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .footer-social:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background: rgba(61,108,244,.1);
+  background: rgba(28,80,125,.08);
 }
 .footer-links { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
 .footer-col h4 {
@@ -874,7 +884,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: all var(--t);
 }
 .tech-chip:hover {
-  border-color: rgba(61,108,244,.3);
+  border-color: rgba(28,80,125,.25);
   color: var(--primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
@@ -926,7 +936,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border-radius: var(--radius-lg);
   transition: all var(--t);
 }
-.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(61,108,244,.2); }
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(28,80,125,.18); }
 .why-icon { width: 44px; height: 44px; color: var(--primary); margin-bottom: 16px; }
 .why-icon svg { width: 100%; height: 100%; }
 .why-name {
@@ -965,7 +975,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border-radius: var(--radius-lg); overflow: hidden;
   transition: border-color var(--t);
 }
-.faq-item.open { border-color: rgba(61,108,244,.3); box-shadow: var(--shadow-sm); }
+.faq-item.open { border-color: rgba(28,80,125,.25); box-shadow: var(--shadow-sm); }
 .faq-q {
   width: 100%; display: flex; justify-content: space-between; align-items: center;
   padding: 22px 28px;
@@ -1007,14 +1017,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: all var(--t);
 }
 .contact-link:hover {
-  border-color: rgba(61,108,244,.3);
+  border-color: rgba(28,80,125,.25);
   background: var(--gradient-soft); color: var(--primary);
 }
 .contact-link-icon { width: 20px; height: 20px; color: var(--primary); flex-shrink: 0; }
 .contact-link-icon svg { width: 100%; height: 100%; }
 .form-placeholder {
   width: 100%; min-height: 440px;
-  border: 2px dashed rgba(61,108,244,.2);
+  border: 2px dashed rgba(28,80,125,.18);
   border-radius: var(--radius-lg);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
@@ -1053,7 +1063,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-family: var(--font-sans); font-size: .72rem; font-weight: 700;
   letter-spacing: .16em; text-transform: uppercase;
   background: var(--gradient-soft);
-  border: 1px solid rgba(61,108,244,.2); color: var(--primary);
+  border: 1px solid rgba(28,80,125,.18); color: var(--primary);
   padding: 8px 22px; border-radius: var(--radius-full);
   margin-bottom: 28px;
 }
@@ -1066,7 +1076,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .coming-title em {
   font-style: italic; font-family: var(--font-serif-en);
-  background: linear-gradient(90deg, #6ea4ff, #a67bff);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

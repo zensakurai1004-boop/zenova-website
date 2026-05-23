@@ -16,41 +16,43 @@
 <meta name="twitter:image" content="https://zenova1004zen.netlify.app/og-image.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Noto+Serif+JP:wght@300;400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  /* === パステルブルー基調パレット === */
-  --bg-base:#F4F8FE;
+  /* === 名刺v20と統一パレット (パステルブルー × パステルグリーン) === */
+  --bg-base:#FFFFFF;
   --bg-white:#FFFFFF;
-  --bg-soft:#EBF3FD;
-  --bg-mist:#F8FBFF;
-  --blue-pale:#E0EEFB;
-  --blue-light:#B3DDF7;
-  --blue-accent:#7BC2F0;
-  --blue-primary:#3A8DDB;
-  --blue-deep:#1E5FA8;
-  --blue-ink:#0A3D7A;
-  --blue-mint:#7DDFE7;
-  --blue-sky:#5BB4F7;
-  --text-dark:#0F1F3D;
+  --bg-soft:#F4FAFC;
+  --bg-mist:#FAFDFC;
+  --blue-pale:#E3F0F4;
+  --blue-light:#B4D7E6;            /* 名刺pastel-blue */
+  --blue-accent:#7AAFC3;
+  --blue-primary:#1C507D;          /* 名刺ACCENT */
+  --blue-deep:#123763;
+  --blue-ink:#0F1928;              /* 名刺INK */
+  --blue-mint:#C8E1D2;             /* 名刺pastel-green */
+  --blue-sky:#A6CFDD;
+  --green-pale:#E8F2EC;
+  --green-light:#C8E1D2;
+  --text-dark:#0F1928;
   --text-mid:#3D4B6B;
-  --text-sub:#6F7E9C;
-  --text-mute:#A8B4CC;
-  --border:#DCE7F5;
-  --border-soft:#EBF1F9;
-  --shadow-blue:0 16px 48px rgba(58,141,219,.14);
-  --shadow-blue-lg:0 30px 80px rgba(30,95,168,.18);
-  --shadow-soft:0 8px 30px rgba(15,31,61,.06);
-  --shadow-card:0 4px 24px rgba(58,141,219,.08);
-  --grad-blue:linear-gradient(135deg,#7BC2F0 0%,#3A8DDB 100%);
-  --grad-blue-deep:linear-gradient(135deg,#5BB4F7 0%,#1E5FA8 100%);
-  --grad-sky:linear-gradient(135deg,#B3DDF7 0%,#7BC2F0 100%);
-  --grad-mint:linear-gradient(135deg,#7DDFE7 0%,#5BB4F7 100%);
-  --grad-aurora:linear-gradient(135deg,#7DDFE7 0%,#5BB4F7 50%,#3A8DDB 100%);
-  --font-display:'Bodoni Moda',serif;
-  --font-jp:'Noto Sans JP',sans-serif;
-  --font-en:'Inter',sans-serif;
+  --text-sub:#5A6476;
+  --text-mute:#8C98A8;
+  --border:#D7E5EC;
+  --border-soft:#ECF2F5;
+  --shadow-blue:0 16px 48px rgba(28,80,125,.14);
+  --shadow-blue-lg:0 30px 80px rgba(18,55,99,.18);
+  --shadow-soft:0 8px 30px rgba(15,25,40,.06);
+  --shadow-card:0 4px 24px rgba(28,80,125,.08);
+  --grad-blue:linear-gradient(135deg,#B4D7E6 0%,#7AAFC3 100%);
+  --grad-blue-deep:linear-gradient(135deg,#7AAFC3 0%,#1C507D 100%);
+  --grad-sky:linear-gradient(135deg,#E3F0F4 0%,#B4D7E6 100%);
+  --grad-mint:linear-gradient(135deg,#C8E1D2 0%,#B4D7E6 100%);
+  --grad-aurora:linear-gradient(135deg,#C8E1D2 0%,#B4D7E6 50%,#7AAFC3 100%);
+  --font-display:'Bodoni Moda','Bodoni 72','Didot',Georgia,serif;
+  --font-jp:'Noto Serif JP','Hiragino Mincho ProN','YuMincho',serif;
+  --font-en:'Bodoni Moda',serif;
   --font-mono:'Space Grotesk',sans-serif;
 }
 html{scroll-behavior:smooth}
