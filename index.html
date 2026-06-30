@@ -269,11 +269,11 @@ img{max-width:100%;display:block}
 /* ========== PRICE ========== */
 #price{background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-soft) 50%,var(--bg-base) 100%);position:relative;overflow:hidden}
 #price::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,var(--blue-pale) 0%,transparent 70%);pointer-events:none;border-radius:50%}
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1;padding-top:20px}
 .price-card{background:#fff;border-radius:24px;padding:44px 28px 36px;text-align:center;position:relative;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--border-soft);overflow:hidden}
 .price-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-blue);border-color:var(--blue-accent)}
-.price-card.popular{background:var(--grad-blue-deep);color:#fff;transform:scale(1.05);box-shadow:var(--shadow-blue-lg);border-color:transparent}
-.price-card.popular::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2) 0%,transparent 60%);pointer-events:none}
+.price-card.popular{background:var(--grad-blue-deep);color:#fff;transform:scale(1.05);box-shadow:var(--shadow-blue-lg);border-color:transparent;overflow:visible}
+.price-card.popular::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2) 0%,transparent 60%);pointer-events:none;border-radius:24px}
 .price-card.popular:hover{transform:scale(1.05) translateY(-8px)}
 .price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#fff;color:var(--blue-deep);font-family:var(--font-mono);font-size:11px;font-weight:800;letter-spacing:2px;padding:6px 18px;border-radius:99px;text-transform:uppercase;box-shadow:var(--shadow-blue);z-index:2}
 .price-icon-wrap{width:64px;height:64px;border-radius:20px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;transition:transform .5s;position:relative;z-index:1}
@@ -1003,8 +1003,7 @@ img{max-width:100%;display:block}
         <div class="price-tax">税込 &yen;55,000/月</div>
         <div class="price-desc">毎月2件まで依頼できる<br>月額プラン。まずはAI活用を<br>始めたい方に。</div>
       </div>
-      <div class="price-card popular fade-in">
-        <div class="price-badge">POPULAR</div>
+      <div class="price-card fade-in">
         <div class="price-icon-wrap">
           <svg class="price-icon" viewBox="0 0 40 40"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M12 20l4 4 8-8"/></svg>
         </div>
@@ -1014,7 +1013,8 @@ img{max-width:100%;display:block}
         <div class="price-tax">税込 &yen;88,000/月</div>
         <div class="price-desc">毎月4件まで依頼できる<br>月額プラン。継続的に<br>業務改善を進めたい方に。</div>
       </div>
-      <div class="price-card fade-in">
+      <div class="price-card popular fade-in">
+        <div class="price-badge">POPULAR</div>
         <div class="price-icon-wrap">
           <svg class="price-icon" viewBox="0 0 40 40"><polygon points="20,4 36,14 36,30 20,36 4,30 4,14"/><path d="M14 20l4 4 8-8"/></svg>
         </div>
