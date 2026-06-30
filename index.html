@@ -365,6 +365,14 @@ img{max-width:100%;display:block}
 .footer-sns svg{width:17px;height:17px;fill:var(--blue-deep);transition:fill .3s}
 .footer-sns a:hover svg{fill:#fff}
 .footer-copy{text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:2px;color:var(--text-mute);position:relative;z-index:1;font-weight:500}
+/* ===== 画像アイコン差し替え用（14枚） ===== */
+.profile-card-icon,.service-icon-wrap,.price-icon-wrap{background:#fff;border:1px solid var(--border-soft)}
+.profile-card-icon{width:64px;height:64px}
+.profile-card-icon img.ic-img{width:46px;height:46px;object-fit:contain;display:block}
+.service-icon-wrap img.ic-img,.price-icon-wrap img.ic-img{width:48px;height:48px;object-fit:contain;display:block}
+.service-card:hover .service-icon-wrap{background:#fff;transform:scale(1.06) rotate(-5deg)}
+.price-card.popular .price-icon-wrap{background:#fff;border-color:transparent}
+.price-card:hover .price-icon-wrap{transform:rotate(5deg) scale(1.06)}
 </style>
 </head>
 <body>
@@ -509,7 +517,7 @@ img{max-width:100%;display:block}
       <div class="profile-card">
         <span class="profile-card-num">/ 01</span>
         <div class="profile-card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          <img class="ic-img" src="assets/icons/01.png" alt="">
         </div>
         <h3>Who I Am</h3>
         <div class="profile-text">
@@ -521,7 +529,7 @@ img{max-width:100%;display:block}
       <div class="profile-card">
         <span class="profile-card-num">/ 02</span>
         <div class="profile-card-icon">
-          <svg viewBox="0 0 24 24"><polygon points="13,2 4,14 12,14 11,22 20,10 12,10"/></svg>
+          <img class="ic-img" src="assets/icons/02.png" alt="">
         </div>
         <h3>What I Do</h3>
         <div class="profile-text">
@@ -583,7 +591,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">01</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="30" rx="4"/><path d="M14 22l4 4 8-8"/><line x1="16" y1="42" x2="32" y2="42"/><line x1="24" y1="36" x2="24" y2="42"/></svg>
+          <img class="ic-img" src="assets/icons/03.png" alt="">
         </div>
         <div class="service-card-title">AI Chatbot</div>
         <div class="service-card-sub">AIチャットBot構築</div>
@@ -599,7 +607,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">02</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 7"/><path d="M10 10l4 4M38 10l-4 4M10 38l4-4M38 38l-4-4"/></svg>
+          <img class="ic-img" src="assets/icons/04.png" alt="">
         </div>
         <div class="service-card-title">Automation</div>
         <div class="service-card-sub">業務自動化</div>
@@ -615,7 +623,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">03</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="4" width="40" height="40" rx="4"/><line x1="4" y1="14" x2="44" y2="14"/><circle cx="10" cy="9" r="1.5" fill="currentColor"/><circle cx="16" cy="9" r="1.5" fill="currentColor"/><circle cx="22" cy="9" r="1.5" fill="currentColor"/><path d="M14 24l6 6 10-12"/></svg>
+          <img class="ic-img" src="assets/icons/05.png" alt="">
         </div>
         <div class="service-card-title">Web / LP</div>
         <div class="service-card-sub">LP・Webサイト制作</div>
@@ -631,7 +639,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">04</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="28" rx="2"/><line x1="4" y1="40" x2="44" y2="40"/><line x1="20" y1="36" x2="20" y2="40"/><line x1="28" y1="36" x2="28" y2="40"/><path d="M12 20h16M12 26h20M12 32h12"/></svg>
+          <img class="ic-img" src="assets/icons/06.png" alt="">
         </div>
         <div class="service-card-title">Slide Design</div>
         <div class="service-card-sub">プレゼン・営業資料制作</div>
@@ -647,7 +655,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">05</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="28" rx="3"/><polygon points="20,16 20,28 32,22" fill="currentColor" stroke="none"/><line x1="14" y1="42" x2="34" y2="42"/></svg>
+          <img class="ic-img" src="assets/icons/07.png" alt="">
         </div>
         <div class="service-card-title">AI Video</div>
         <div class="service-card-sub">AI動画・ショート制作</div>
@@ -663,7 +671,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">06</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="10"/><circle cx="24" cy="18" r="2" fill="currentColor" stroke="none"/><path d="M20 24c1.5 1.5 6.5 1.5 8 0"/><line x1="18" y1="10" x2="14" y2="6"/><line x1="30" y1="10" x2="34" y2="6"/><path d="M10 40c0-6 6-10 14-10s14 4 14 10"/></svg>
+          <img class="ic-img" src="assets/icons/08.png" alt="">
         </div>
         <div class="service-card-title">AI Agent</div>
         <div class="service-card-sub">AIエージェント構築代行</div>
@@ -679,7 +687,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">07</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2"/><path d="M14 22l6 6-6 6M24 34h10"/></svg>
+          <img class="ic-img" src="assets/icons/09.png" alt="">
         </div>
         <div class="service-card-title">Custom Tool</div>
         <div class="service-card-sub">業務用ツール制作</div>
@@ -695,7 +703,7 @@ img{max-width:100%;display:block}
       <div class="service-card fade-in">
         <span class="service-num">08</span>
         <div class="service-icon-wrap">
-          <svg class="service-icon" viewBox="0 0 48 48"><path d="M24 4l4 12h12l-10 8 4 14-10-8-10 8 4-14-10-8h12z"/></svg>
+          <img class="ic-img" src="assets/icons/10.png" alt="">
         </div>
         <div class="service-card-title">AI Consulting</div>
         <div class="service-card-sub">AI活用コンサル・顧問</div>
@@ -995,7 +1003,7 @@ img{max-width:100%;display:block}
     <div class="price-grid">
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
-          <svg class="price-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M16 14h8M16 20h8M16 26h4"/></svg>
+          <img class="ic-img" src="assets/icons/11.png" alt="">
         </div>
         <div class="price-plan-en">LIGHT</div>
         <div class="price-plan-jp">ライト｜月2件まで</div>
@@ -1005,7 +1013,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
-          <svg class="price-icon" viewBox="0 0 40 40"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M12 20l4 4 8-8"/></svg>
+          <img class="ic-img" src="assets/icons/12.png" alt="">
         </div>
         <div class="price-plan-en">STANDARD</div>
         <div class="price-plan-jp">スタンダード｜月4件まで</div>
@@ -1016,7 +1024,7 @@ img{max-width:100%;display:block}
       <div class="price-card popular fade-in">
         <div class="price-badge">POPULAR</div>
         <div class="price-icon-wrap">
-          <svg class="price-icon" viewBox="0 0 40 40"><polygon points="20,4 36,14 36,30 20,36 4,30 4,14"/><path d="M14 20l4 4 8-8"/></svg>
+          <img class="ic-img" src="assets/icons/13.png" alt="">
         </div>
         <div class="price-plan-en">PREMIUM</div>
         <div class="price-plan-jp">プレミアム｜月10件まで</div>
@@ -1026,7 +1034,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
-          <svg class="price-icon" viewBox="0 0 40 40"><path d="M20 4l4 8 9 1.5-6.5 6.5 1.5 9-8-4.5-8 4.5 1.5-9L7 13.5 16 12z"/></svg>
+          <img class="ic-img" src="assets/icons/14.png" alt="">
         </div>
         <div class="price-plan-en">UNLIMITED</div>
         <div class="price-plan-jp">無制限</div>
