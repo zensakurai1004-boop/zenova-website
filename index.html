@@ -269,8 +269,8 @@ img{max-width:100%;display:block}
 /* ========== PRICE ========== */
 #price{background:linear-gradient(180deg,var(--bg-base) 0%,var(--bg-soft) 50%,var(--bg-base) 100%);position:relative;overflow:hidden}
 #price::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,var(--blue-pale) 0%,transparent 70%);pointer-events:none;border-radius:50%}
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1;padding-top:20px}
-.price-card{background:#fff;border-radius:24px;padding:44px 28px 36px;text-align:center;position:relative;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--border-soft);overflow:hidden}
+.price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;z-index:1;padding-top:20px}
+.price-card{background:#fff;border-radius:22px;padding:40px 16px 30px;text-align:center;position:relative;transition:all .5s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-card);border:1px solid var(--border-soft);overflow:hidden}
 .price-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-blue);border-color:var(--blue-accent)}
 .price-card.popular{background:var(--grad-blue-deep);color:#fff;transform:scale(1.05);box-shadow:var(--shadow-blue-lg);border-color:transparent;overflow:visible}
 .price-card.popular::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.2) 0%,transparent 60%);pointer-events:none;border-radius:24px}
@@ -285,7 +285,7 @@ img{max-width:100%;display:block}
 .price-card.popular .price-plan-en{color:#fff}
 .price-plan-jp{font-size:13px;color:var(--text-sub);margin-bottom:24px;font-weight:500;position:relative;z-index:1}
 .price-card.popular .price-plan-jp{color:rgba(255,255,255,.85)}
-.price-amount{font-family:var(--font-en);font-size:36px;font-weight:900;margin-bottom:6px;color:var(--blue-deep);letter-spacing:-.02em;position:relative;z-index:1;line-height:1}
+.price-amount{font-family:var(--font-en);font-size:28px;font-weight:900;margin-bottom:6px;color:var(--blue-deep);letter-spacing:-.02em;position:relative;z-index:1;line-height:1}
 .price-card.popular .price-amount{color:#fff}
 .price-tax{font-family:var(--font-en);font-size:13px;font-weight:600;color:var(--text-sub);margin-bottom:24px;position:relative;z-index:1;line-height:1}
 .price-card.popular .price-tax{color:rgba(255,255,255,.85)}
@@ -303,8 +303,9 @@ img{max-width:100%;display:block}
 @media(max-width:600px){.message-wrap{padding:44px 26px 36px}.message-body{font-size:14.5px;line-height:2}.message-quote{font-size:60px;top:16px;left:20px}}
 .price-desc{font-size:13.5px;line-height:1.9;color:var(--text-mid);font-weight:500;position:relative;z-index:1}
 .price-card.popular .price-desc{color:rgba(255,255,255,.92)}
-@media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}.price-card.popular{transform:none}.price-card.popular:hover{transform:translateY(-8px)}}
-@media(max-width:520px){.price-grid{grid-template-columns:1fr}}
+@media(max-width:1120px){.price-grid{grid-template-columns:repeat(3,1fr)}.price-card.popular{transform:none}.price-card.popular:hover{transform:translateY(-8px)}}
+@media(max-width:720px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.price-grid{grid-template-columns:1fr}}
 
 /* ========== CTA ========== */
 .cta-section{padding:120px 0;background:var(--grad-blue-deep);text-align:center;position:relative;overflow:hidden}
@@ -370,6 +371,7 @@ img{max-width:100%;display:block}
 .profile-card-icon{width:64px;height:64px}
 .profile-card-icon img.ic-img{width:46px;height:46px;object-fit:contain;display:block}
 .service-icon-wrap img.ic-img,.price-icon-wrap img.ic-img{width:48px;height:48px;object-fit:contain;display:block}
+.price-icon-wrap svg.ic-svg{width:44px;height:44px;display:block}
 .service-card:hover .service-icon-wrap{background:#fff;transform:scale(1.06) rotate(-5deg)}
 .price-card.popular .price-icon-wrap{background:#fff;border-color:transparent}
 .price-card:hover .price-icon-wrap{transform:rotate(5deg) scale(1.06)}
@@ -1012,13 +1014,23 @@ img{max-width:100%;display:block}
     <div class="price-grid">
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
+          <svg class="ic-svg" viewBox="0 0 48 48" fill="none" stroke="var(--blue-deep)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M24 5C29 10 32 18 32 26L31 31H17L16 26C16 18 19 10 24 5Z" fill="var(--blue-pale)"/><circle cx="24" cy="19" r="3.3" fill="#fff"/><path d="M17 27L11 32L12.5 39L18 35Z" fill="var(--blue-mint)"/><path d="M31 27L37 32L35.5 39L30 35Z" fill="var(--blue-mint)"/><path d="M21 32C21 38 22.5 42 24 43C25.5 42 27 38 27 32" fill="var(--blue-pale)"/></svg>
+        </div>
+        <div class="price-plan-en">START</div>
+        <div class="price-plan-jp">スタート｜月1件</div>
+        <div class="price-amount">&yen;50,000<span style="font-size:13px;font-weight:600">/月</span></div>
+        <div class="price-tax">税込 &yen;55,000/月</div>
+        <div class="price-desc">毎月1件から依頼できる<br>お試し月額プラン。<br>まず始めたい方に。</div>
+      </div>
+      <div class="price-card fade-in">
+        <div class="price-icon-wrap">
           <img class="ic-img" src="assets/icons/11.png" alt="">
         </div>
         <div class="price-plan-en">LIGHT</div>
         <div class="price-plan-jp">ライト｜月2件まで</div>
-        <div class="price-amount">&yen;50,000<span style="font-size:14px;font-weight:600">/月</span></div>
-        <div class="price-tax">税込 &yen;55,000/月</div>
-        <div class="price-desc">毎月2件まで依頼できる<br>月額プラン。まずはAI活用を<br>始めたい方に。</div>
+        <div class="price-amount">&yen;80,000<span style="font-size:13px;font-weight:600">/月</span></div>
+        <div class="price-tax">税込 &yen;88,000/月</div>
+        <div class="price-desc">毎月2件まで依頼できる<br>月額プラン。少しずつ<br>AI活用を進めたい方に。</div>
       </div>
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
@@ -1026,8 +1038,8 @@ img{max-width:100%;display:block}
         </div>
         <div class="price-plan-en">STANDARD</div>
         <div class="price-plan-jp">スタンダード｜月4件まで</div>
-        <div class="price-amount">&yen;80,000<span style="font-size:14px;font-weight:600">/月</span></div>
-        <div class="price-tax">税込 &yen;88,000/月</div>
+        <div class="price-amount">&yen;150,000<span style="font-size:13px;font-weight:600">/月</span></div>
+        <div class="price-tax">税込 &yen;165,000/月</div>
         <div class="price-desc">毎月4件まで依頼できる<br>月額プラン。継続的に<br>業務改善を進めたい方に。</div>
       </div>
       <div class="price-card popular fade-in">
@@ -1036,10 +1048,10 @@ img{max-width:100%;display:block}
           <img class="ic-img" src="assets/icons/13.png" alt="">
         </div>
         <div class="price-plan-en">PREMIUM</div>
-        <div class="price-plan-jp">プレミアム｜月10件まで</div>
-        <div class="price-amount">&yen;150,000<span style="font-size:14px;font-weight:600">/月</span></div>
-        <div class="price-tax">税込 &yen;165,000/月</div>
-        <div class="price-desc">毎月10件まで依頼できる<br>月額プラン。社内のAI化を<br>本格的に進める方へ。</div>
+        <div class="price-plan-jp">プレミアム｜月7件まで</div>
+        <div class="price-amount">&yen;200,000<span style="font-size:13px;font-weight:600">/月</span></div>
+        <div class="price-tax">税込 &yen;220,000/月</div>
+        <div class="price-desc">毎月7件まで依頼できる<br>月額プラン。社内のAI化を<br>本格的に進める方へ。</div>
       </div>
       <div class="price-card fade-in">
         <div class="price-icon-wrap">
@@ -1047,12 +1059,12 @@ img{max-width:100%;display:block}
         </div>
         <div class="price-plan-en">UNLIMITED</div>
         <div class="price-plan-jp">無制限</div>
-        <div class="price-amount">&yen;400,000<span style="font-size:14px;font-weight:600">/月</span></div>
+        <div class="price-amount">&yen;400,000<span style="font-size:13px;font-weight:600">/月</span></div>
         <div class="price-tax">税込 &yen;440,000/月</div>
         <div class="price-desc">依頼件数は無制限。<br>専属チームのように<br>フル活用したい方へ。</div>
       </div>
     </div>
-    <p class="price-note fade-in">※ 表示はすべて税抜価格です（各金額の下に税込10%を併記しています）。<br>※ 月額プランは「1か月あたりに依頼できる件数」の上限です。1件あたりの規模が大きい場合は、内容に応じて1件ごとに <strong>＋&yen;15,000（税込&yen;16,500）</strong> を加算させていただきます。</p>
+    <p class="price-note fade-in">※ 記載の料金は目安です。案件の内容・ボリュームに応じて、実際の料金は<strong>要相談</strong>とさせていただきます。<br>※ 表示はすべて税抜価格です（各金額の下に税込10%を小さく併記しています）。<br>※ 月額プランは「1か月あたりに依頼できる件数」の上限です。1件あたりの規模が大きい場合は、内容に応じて1件ごとに <strong>＋&yen;15,000（税込&yen;16,500）</strong> を加算させていただきます。</p>
   </div>
 </section>
 
